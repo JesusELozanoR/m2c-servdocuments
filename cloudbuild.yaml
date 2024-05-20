@@ -61,5 +61,6 @@ steps:
     '--memory', '256Mi',
     '--port', '80',
     '--allow-unauthenticated']
+  id: deploy
 images:
 - us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments
