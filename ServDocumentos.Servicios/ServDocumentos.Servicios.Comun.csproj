@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="cmn.core.GestorRepositorioDocumentos" Version="1.0.9" />
+    <PackageReference Include="cmn.std.Parametros" Version="2.0.0" />
+    <PackageReference Include="Comun.Peticiones" Version="1.0.5" />
+    <PackageReference Include="Flurl" Version="2.8.2" />
+    <PackageReference Include="Flurl.Http" Version="2.4.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="QRCoder" Version="1.4.3" />
+    <PackageReference Include="SkiaSharp" Version="1.68.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ServDocumentos.Core\ServDocumentos.Core.csproj" />
+    <ProjectReference Include="..\ServDocumentos.Repositorios.CAMEDIGITAL\ServDocumentos.Repositorios.CAMEDIGITAL.csproj" />
+    <ProjectReference Include="..\ServDocumentos.Respositorios.TCR\ServDocumentos.Repositorios.TCR.csproj" />
+    <ProjectReference Include="..\ServDocumentos.Servicios.TCR\ServDocumentos.Servicios.TCR.csproj" />
+    <ProjectReference Include="..\ServDocumentos.Servicios.TSI\ServDocumentos.Servicios.TSI.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="cmn.std.Binarios">
+      <HintPath>..\ServDocumentos.API\LibreriasComunes\cmn.std.Binarios.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.DocIO.Portable">
+      <HintPath>..\ServDocumentos.APi\LibreriasComunes\Syncfusion.DocIO.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.DocIORenderer.Portable">
+      <HintPath>..\ServDocumentos.APi\LibreriasComunes\Syncfusion.DocIORenderer.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.OfficeChart.Portable">
+      <HintPath>..\ServDocumentos.APi\LibreriasComunes\Syncfusion.OfficeChart.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Pdf.Portable">
+      <HintPath>..\ServDocumentos.APi\LibreriasComunes\Syncfusion.Pdf.Portable.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

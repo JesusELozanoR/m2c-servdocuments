@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AdoNetCore.AseClient" Version="0.18.0" />
+    <PackageReference Include="Dapper" Version="2.0.123" />
+    <PackageReference Include="System.ServiceModel.Duplex" Version="4.4.*" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.7.0" />
+    <PackageReference Include="System.ServiceModel.NetTcp" Version="4.4.*" />
+    <PackageReference Include="System.ServiceModel.Security" Version="4.4.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ServDocumentos.Core\ServDocumentos.Core.csproj" />
+    <ProjectReference Include="..\ServDocumentos.Repositorios.CAMEDIGITAL\ServDocumentos.Repositorios.CAMEDIGITAL.csproj" />
+    <ProjectReference Include="..\ServDocumentos.Repositorios.Comun\ServDocumentos.Repositorios.Comun.csproj" />
+    <ProjectReference Include="..\ServDocumentos.Servicios.TCR\ServDocumentos.Servicios.TCR.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
+  </ItemGroup>
+
+</Project>

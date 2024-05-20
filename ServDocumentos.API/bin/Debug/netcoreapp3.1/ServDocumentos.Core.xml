@@ -1,0 +1,2801 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ServDocumentos.Core</name>
+    </assembly>
+    <members>
+        <member name="T:ServDocumentos.Core.Configuraciones.MambuConfig">
+            <summary>
+            Configuracion del API de MAMBU
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Configuraciones.MambuConfig.Url">
+            <summary>
+            Url de mambu
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Configuraciones.MambuConfig.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Configuraciones.MambuConfig.Password">
+            <summary>
+            Password
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Contratos.Factories.Comun.IUnitOfWork.RepositorioBitacoraEstadoCuenta">
+            <summary>
+            Repositorio bitacora estado cuenta
+            </summary>
+        </member>
+        <member name="T:ServDocumentos.Core.Contratos.Factories.Mambu.IMambuRepositoryFactory">
+            <summary>
+            Factory de <see cref="T:ServDocumentos.Core.Contratos.Factories.Mambu.IUnitOfWorkApi"/>
+            </summary>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Factories.Mambu.IMambuRepositoryFactory.Crear(ServDocumentos.Core.Enumeradores.Empresa)">
+            <summary>
+            Crear una instancia de <see cref="T:ServDocumentos.Core.Contratos.Factories.Mambu.IUnitOfWorkApi"/>
+            </summary>
+            <param name="core">Empresa de la que se va crear la instancia</param>
+            <returns>Instancia de <see cref="T:ServDocumentos.Core.Contratos.Factories.Mambu.IUnitOfWorkApi"/></returns>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Factories.Mambu.IMambuRepositoryFactory.Crear(System.String)">
+            <summary>
+            Crear una instancia de <see cref="T:ServDocumentos.Core.Contratos.Factories.Mambu.IUnitOfWorkApi"/>
+            </summary>
+            <param name="core">Empresa de la que se va crear la instancia</param>
+            <returns>Instancia de <see cref="T:ServDocumentos.Core.Contratos.Factories.Mambu.IUnitOfWorkApi"/></returns>
+        </member>
+        <member name="T:ServDocumentos.Core.Contratos.Factories.Mambu.IUnitOfWorkApi">
+            <summary>
+            Unidad de trabajo realcionadas al API de MAMBU
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Contratos.Factories.Mambu.IUnitOfWorkApi.RepositorioProductosAhorro">
+            <summary>
+            Repositorio de productos de ahorro
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Contratos.Factories.Mambu.IUnitOfWorkApi.RepositorioAhorros">
+            <summary>
+            Repositorio de cuentas de ahorro
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Contratos.Factories.Mambu.IUnitOfWorkApi.RepositorioClientes">
+            <summary>
+            Repositorio de clientes
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Contratos.Factories.Mambu.IUnitOfWorkApi.RepositorioTransaccionesAhorro">
+            <summary>
+            Repositorio de transacciones de ahorro
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Contratos.Factories.Mambu.IUnitOfWorkApi.RepositorioCanalesTransaccion">
+            <summary>
+            Repositorio de canales de transaccion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Contratos.Factories.Mambu.IUnitOfWorkApi.RepositorioCreditos">
+            <summary>
+            Repositorio de cuentas de credito
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Contratos.Factories.Mambu.IUnitOfWorkApi.RepositorioTransaccionesCredito">
+            <summary>
+            Repositorio de transacciones de credito
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Contratos.Factories.Mambu.IUnitOfWorkApi.RepositorioProductosCredito">
+            <summary>
+            Repositorio de productos de credito
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Contratos.Factories.Mambu.IUnitOfWorkApi.RepositorioGrupos">
+            <summary>
+            Repositorio de grupos
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Contratos.Factories.Mambu.IUnitOfWorkApi.RepositorioSucursales">
+            <summary>
+            Repositorio de sucursales
+            </summary>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Repositorios.CAME.IRepositorioEstadoCuentaMensual.ObtenerBitacorasEstadoCuenta(System.DateTime)">
+            <summary>
+            Obtiene las bitacoras de los estados de cuenta generados en base a una fecha especifica
+            </summary>
+            <param name="fecha">Fecha para obtener las bitacoras</param>
+            <returns>Coleccion de bitacoras obtenidas</returns>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Repositorios.CAME.IRepositorioEstadoCuentaMensual.InsertarEstadoDeCuenta(System.String,System.String,System.DateTime,System.String,System.String)">
+            <summary>
+            Inserta un estado de cuenta
+            </summary>
+            <param name="numeroCliente">Numero de cliente</param>
+            <param name="numeroCuenta">Numero de cuenta</param>
+            <param name="fecha">Fecha de generacion</param>
+            <param name="estado">Estado</param>
+            <param name="correo">Correo al que se enviara el email</param>
+        </member>
+        <member name="T:ServDocumentos.Core.Contratos.Repositorios.Comun.IRepositorioBitacoraEstadoCuenta">
+            <summary>
+            Define los metodos para el repositorio de bitacora estado cuenta
+            </summary>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Repositorios.Comun.IRepositorioBitacoraEstadoCuenta.ObtenerBitacorasEstadoCuenta(System.String,System.DateTime,System.Int32)">
+            <summary>
+            Obtiene las bitacoras de los estados de cuenta generados en base a una fecha especifica
+            </summary>
+            <param name="empresa">Empresa</param>
+            <param name="fecha">Fecha para obtener las bitacoras</param>
+            <param name="elementos">Numero de elementos a obtener</param>
+            <returns>Coleccion de bitacoras obtenidas</returns>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Repositorios.Comun.IRepositorioBitacoraEstadoCuenta.ObtenerBitacorasEstadoCuenta(System.String,System.DateTime)">
+            <summary>
+            Obtiene las bitacoras de los estados de cuenta generados en base a una fecha especifica
+            </summary>
+            <param name="empresa">Empresa</param>
+            <param name="fecha">Fecha para obtener las bitacoras</param>
+            <returns>Coleccion de bitacoras obtenidas</returns>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Repositorios.Comun.IRepositorioBitacoraEstadoCuenta.ObtenerBitacorasEstadoCuentaTodos(System.String,System.DateTime)">
+            <summary>
+            Obtiene las bitacoras de los estados en base a una fecha especifica
+            </summary>
+            <param name="empresa">Empresa</param>
+            <param name="fecha">Fecha para obtener las bitacoras</param>
+            <returns>Coleccion de bitacoras obtenidas</returns>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Repositorios.Comun.IRepositorioBitacoraEstadoCuenta.InsertarEstadoDeCuenta(System.String,System.String,System.String,System.DateTime,System.String)">
+            <summary>
+            Inserta un estado de cuenta
+            </summary>
+            <param name="empresa">Empresa</param>
+            <param name="numeroCliente">Numero de cliente</param>
+            <param name="numeroCuenta">Numero de cuenta</param>
+            <param name="fecha">Fecha de generacion</param>
+            <param name="estado">Estado</param>
+            <returns>Verdadera si la insercion fue exitosa, falso en caso constrario</returns>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Repositorios.Comun.IRepositorioBitacoraEstadoCuenta.ActualizaDatosEstadoCuenta(ServDocumentos.Core.Dtos.Comun.Correo.ActualizaEstadoCuentaDto)">
+            <summary>
+            Actualiza la informacion de un estado de cuenta
+            </summary>
+            <param name="estadoCuenta">Informacion del estado de cuenta</param>
+            <returns>Cantidad de registros afectados</returns>
+        </member>
+        <member name="T:ServDocumentos.Core.Contratos.Repositorios.Mambu.IRepositorioAhorrosApi">
+            <summary>
+            Define los metodos del repositorio de ahorros
+            </summary>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Repositorios.Mambu.IRepositorioAhorrosApi.Search(ServDocumentos.Core.Dtos.DatosMambu.Solicitudes.SearchCriteria)">
+            <summary>
+            Obtiene una coleccion de ahorros
+            </summary>
+            <param name="searchCriteria">Criterios de busqueda</param>
+            <returns>Lista de cuentas de ahorro</returns>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Repositorios.Mambu.IRepositorioAhorrosApi.GetById(System.String)">
+            <summary>
+            Obtiene la informacion de un ahorro en base a su id o encoded key
+            </summary>
+            <param name="id">Id o encoded key de la cuenta</param>
+            <returns>Cuenta de ahorro</returns>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Repositorios.Mambu.IRepositorioAhorrosApi.GetById(System.String,ServDocumentos.Core.Dtos.DatosMambu.Enums.DetailsLevel)">
+            <summary>
+            Obtiene la informacion de un ahorro en base a su id o encoded key
+            </summary>
+            <param name="id">Id o encoded key de la cuenta</param>
+            <param name="detailsLevel">Nivel de detalle</param>
+            <returns>Cuenta de ahorro</returns>
+        </member>
+        <member name="T:ServDocumentos.Core.Contratos.Repositorios.Mambu.IRepositorioCanalesTransaccionApi">
+            <summary>
+            Define los metodos del repositorio de productos
+            </summary>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Repositorios.Mambu.IRepositorioCanalesTransaccionApi.GetAll">
+            <summary>
+            Obtener todos los canales de transaccion
+            </summary>
+            <returns>Coleccion de canales de transaccion</returns>
+        </member>
+        <member name="T:ServDocumentos.Core.Contratos.Repositorios.Mambu.IRepositorioClientesApi">
+            <summary>
+            Define los metodos del repositorio de clientes
+            </summary>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Repositorios.Mambu.IRepositorioClientesApi.GetById(System.String)">
+            <summary>
+            Obtener cliente en base a su id o encoded key
+            </summary>
+            <param name="id">Id o encoded key del cliente</param>
+            <returns>Informacion del cliente</returns>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Repositorios.Mambu.IRepositorioClientesApi.GetById(System.String,ServDocumentos.Core.Dtos.DatosMambu.Enums.DetailsLevel)">
+            <summary>
+            Obtener cliente en base a su id o encoded key
+            </summary>
+            <param name="id">Id o encoded key del cliente</param>
+            <param name="detailsLevel">Nivel de detalle</param>
+            <returns>Informacion del cliente</returns>
+        </member>
+        <member name="T:ServDocumentos.Core.Contratos.Repositorios.Mambu.IRepositorioCreditosApi">
+            <summary>
+            Define los metodos del repositorio de cuentas de credito
+            </summary>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Repositorios.Mambu.IRepositorioCreditosApi.GetById(System.String)">
+            <summary>
+            Obtener credito en base a su identificador
+            </summary>
+            <param name="id">Encoded key o Id del credito</param>
+            <returns>Instancia de <see cref="T:ServDocumentos.Core.Dtos.DatosMambu.Credito"/></returns>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Repositorios.Mambu.IRepositorioCreditosApi.GetById(System.String,ServDocumentos.Core.Dtos.DatosMambu.Enums.DetailsLevel)">
+            <summary>
+            Obtener credito en base a su identificador
+            </summary>
+            <param name="id">Encoded key o Id del credito</param>
+            <param name="detailsLevel">Nivel de detalle</param>
+            <returns>Instancia de <see cref="T:ServDocumentos.Core.Dtos.DatosMambu.Credito"/></returns>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Repositorios.Mambu.IRepositorioCreditosApi.GetSchedules(System.String)">
+            <summary>
+            Obtener pagos de un credito
+            </summary>
+            <param name="accountId">Id o encoded key de la cuenta</param>
+            <returns>Informacion de los pagos</returns>
+        </member>
+        <member name="T:ServDocumentos.Core.Contratos.Repositorios.Mambu.IRepositorioGruposApi">
+            <summary>
+            Define los metodos del repositorio de grupos
+            </summary>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Repositorios.Mambu.IRepositorioGruposApi.GetById(System.String)">
+            <summary>
+            Obtener grupo en base a su id o encoded key
+            </summary>
+            <param name="id">Id o encoded key del grupo</param>
+            <returns>Informacion del grupo</returns>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Repositorios.Mambu.IRepositorioGruposApi.GetById(System.String,ServDocumentos.Core.Dtos.DatosMambu.Enums.DetailsLevel)">
+            <summary>
+            Obtener grupo en base a su id o encoded key
+            </summary>
+            <param name="id">Id o encoded key del grupo</param>
+            <param name="detailsLevel">Nivel de detalle</param>
+            <returns>Informacion del grupo</returns>
+        </member>
+        <member name="T:ServDocumentos.Core.Contratos.Repositorios.Mambu.IRepositorioProductosAhorroApi">
+            <summary>
+            Define los metodos del repositorio de productos de deposito
+            </summary>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Repositorios.Mambu.IRepositorioProductosAhorroApi.ObtenerProductos">
+            <summary>
+            Consultar productos
+            </summary>
+            <returns>Coleccion de productos</returns>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Repositorios.Mambu.IRepositorioProductosAhorroApi.GetById(System.String)">
+            <summary>
+            Obtener producto en base a su id o encoded key
+            </summary>
+            <param name="id">Id o encoded key del producto</param>
+            <returns>Informacion del producto</returns>
+        </member>
+        <member name="T:ServDocumentos.Core.Contratos.Repositorios.Mambu.IRepositorioProductosCreditoApi">
+            <summary>
+            Define los metodos del repositorio de productos de credito
+            </summary>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Repositorios.Mambu.IRepositorioProductosCreditoApi.GetById(System.String)">
+            <summary>
+            Obtener producto en base a su id o encoded key
+            </summary>
+            <param name="id">Id o encoded key del producto</param>
+            <returns>Informacion del producto</returns>
+        </member>
+        <member name="T:ServDocumentos.Core.Contratos.Repositorios.Mambu.IRepositorioSucursalesApi">
+            <summary>
+            Define los metodos del repositorio de sucursales
+            </summary>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Repositorios.Mambu.IRepositorioSucursalesApi.GetById(System.String)">
+            <summary>
+            Obtener sucursal en base a su id o encoded key
+            </summary>
+            <param name="id">Id o encoded key de la sucursal</param>
+            <returns>Informacion de la sucursal</returns>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Repositorios.Mambu.IRepositorioSucursalesApi.GetById(System.String,ServDocumentos.Core.Dtos.DatosMambu.Enums.DetailsLevel)">
+            <summary>
+            Obtener sucursal en base a su id o encoded key
+            </summary>
+            <param name="id">Id o encoded key de la sucursal</param>
+            <param name="detailsLevel">Nivel de detalle</param>
+            <returns>Informacion de la sucursal</returns>
+        </member>
+        <member name="T:ServDocumentos.Core.Contratos.Repositorios.Mambu.IRepositorioTransaccionesAhorroApi">
+            <summary>
+            Define los metodos del repositorio de transacciones de ahorro
+            </summary>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Repositorios.Mambu.IRepositorioTransaccionesAhorroApi.GetAll(System.String)">
+            <summary>
+            Obtener todas las transacciones de una cuenta de ahorro
+            </summary>
+            <param name="idCuenta">Id de la cuenta</param>
+            <returns>Coleccion de transacciones</returns>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Repositorios.Mambu.IRepositorioTransaccionesAhorroApi.Search(ServDocumentos.Core.Dtos.DatosMambu.Solicitudes.SearchCriteria)">
+            <summary>
+            Obtener transacciones de ahorro por filtro
+            </summary>
+            <param name="searchCriteria">Criterios de busqueda</param>
+            <returns>Coleccion de transacciones</returns>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Repositorios.Mambu.IRepositorioTransaccionesAhorroApi.SearchTransacctions(ServDocumentos.Core.Dtos.DatosMambu.Solicitudes.SearchCriteria)">
+            <summary>
+            Obtener transacciones de ahorro por filtro
+            </summary>
+            <param name="searchCriteria">Criterios de busqueda</param>
+            <returns>Coleccion de transacciones</returns>
+        </member>
+        <member name="T:ServDocumentos.Core.Contratos.Repositorios.Mambu.IRepositorioTransaccionesCreditoApi">
+            <summary>
+            Define los metodos del repositorio de transacciones de credito
+            </summary>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Repositorios.Mambu.IRepositorioTransaccionesCreditoApi.Search(ServDocumentos.Core.Dtos.DatosMambu.Solicitudes.SearchCriteria)">
+            <summary>
+            Obtener transacciones de credito por filtro
+            </summary>
+            <param name="searchCriteria">Criterios de busqueda</param>
+            <returns>Coleccion de transacciones</returns>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Repositorios.TCR.IRepositorioEstadoCuentaMensual.ObtenerBitacorasEstadoCuenta(System.DateTime)">
+            <summary>
+            Obtiene las bitacoras de los estados de cuenta generados en base a una fecha especifica
+            </summary>
+            <param name="fecha">Fecha para obtener las bitacoras</param>
+            <returns>Coleccion de bitacoras obtenidas</returns>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Repositorios.TCR.IRepositorioEstadoCuentaMensual.InsertarEstadoDeCuenta(System.String,System.String,System.DateTime,System.String,System.String)">
+            <summary>
+            Inserta un estado de cuenta
+            </summary>
+            <param name="numeroCliente">Numero de cliente</param>
+            <param name="numeroCuenta">Numero de cuenta</param>
+            <param name="fecha">Fecha de generacion</param>
+            <param name="estado">Estado</param>
+            <param name="correo">Correo al que se enviara el email</param>
+        </member>
+        <member name="T:ServDocumentos.Core.Contratos.Servicios.Comun.IServicioBitacoraEstadoCuenta">
+            <summary>
+            Define los metodos para el revicio de bitacora estado cuenta
+            </summary>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Servicios.Comun.IServicioBitacoraEstadoCuenta.ActualizaEstadoCuenta(ServDocumentos.Core.Dtos.Comun.Correo.ActualizaEstadoCuentaDto)">
+            <summary>
+            Actualiza la informacion de un estado de cuenta
+            </summary>
+            <param name="estadoCuenta">Informacion del estado de cuenta</param>
+            <returns>Cantidad de registros afectados</returns>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Servicios.Comun.IServicioBitacoraEstadoCuenta.ObtenerBitacorasEstadoCuenta(System.String,System.DateTime,System.Int32)">
+            <summary>
+            Obtiene las bitacoras de los estados de cuenta generados en base a una fecha especifica
+            </summary>
+            <param name="fecha">Fecha para obtener las bitacoras</param>
+            <param name="empresa">Empresa relacionada a los estados de cuenta</param>
+            <param name="elementos">Numero de elementos a obtener</param>
+            <returns>Coleccion de bitacoras obtenidas</returns>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Servicios.Comun.IServicioBitacoraEstadoCuenta.ObtenerBitacorasEstadoCuenta(System.String,System.DateTime)">
+            <summary>
+            Obtiene las bitacoras de los estados de cuenta generados en base a una fecha especifica
+            </summary>
+            <param name="fecha">Fecha para obtener las bitacoras</param>
+            <param name="empresa">Empresa relacionada a los estados de cuenta</param>
+            <returns>Coleccion de bitacoras obtenidas</returns>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Servicios.Comun.IServicioBitacoraEstadoCuenta.ObtenerBitacorasEstadoCuentaTodos(System.String,System.DateTime)">
+            <summary>
+            Obtiene las bitacoras de los estados en base a una fecha especifica
+            </summary>
+            <param name="empresa">Empresa</param>
+            <param name="fecha">Fecha para obtener las bitacoras</param>
+            <returns>Coleccion de bitacoras obtenidas</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:ServDocumentos.Core.Contratos.Servicios.Comun.IServicioBitacoraEstadoCuenta.InsertarEstadoDeCuenta(System.String,System.String,System.String,System.DateTime,System.String)" -->
+        <member name="M:ServDocumentos.Core.Contratos.Servicios.Comun.IServicioEstadoCuentaMensual.ObtenerBitacorasEstadoCuenta(System.DateTime)">
+            <summary>
+            Obtiene las bitacoras de los estados de cuenta generados en base a una fecha especifica
+            </summary>
+            <param name="fecha">Fecha para obtener las bitacoras</param>
+            <returns>Coleccion de bitacoras obtenidas</returns>
+        </member>
+        <member name="M:ServDocumentos.Core.Contratos.Servicios.Comun.IServicioEstadoCuentaMensual.InsertarEstadoDeCuenta(System.String,System.String,System.DateTime,System.String,System.String)">
+            <summary>
+            Inserta un estado de cuenta
+            </summary>
+            <param name="numeroCliente">Numero de cliente</param>
+            <param name="numeroCuenta">Numero de cuenta</param>
+            <param name="fecha">Fecha de generacion</param>
+            <param name="estado">Estado</param>
+            <param name="correo">Correo al que se enviara el email</param>
+        </member>
+        <member name="T:ServDocumentos.Core.Dtos.Comun.Correo.ActualizaEstadoCuentaDto">
+            <summary>
+            DTO para actualizar una bitacora de estado de cuenta
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Correo.ActualizaEstadoCuentaDto.NumeroCuenta">
+            <summary>
+            Numero de la cuenta (Id o Encoded key)
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Correo.ActualizaEstadoCuentaDto.NumeroCliente">
+            <summary>
+            Numero del cliente (Id o Encoded key)
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Correo.ActualizaEstadoCuentaDto.Estatus">
+            <summary>
+            Estatus del estado de cuenta
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Correo.ActualizaEstadoCuentaDto.Observaciones">
+            <summary>
+            Observaciones adicionales
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Correo.ActualizaEstadoCuentaDto.Fecha">
+            <summary>
+            Fecha en que se genera el estado de cuenta
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Correo.ActualizaEstadoCuentaDto.FechaEnvio">
+            <summary>
+            Fecha en la que se envio el estado de cuenta
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Correo.ActualizaEstadoCuentaDto.Empresa">
+            <summary>
+            Empresa a la que pertenece la cuenta
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Documento.Plantilla.Base64">
+            <summary>
+            Plantilla en base 64
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Plantillas.PlantillaDto.PlantillaId">
+            <summary>
+            id de la Plantilla
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Plantillas.PlantillaDto.PlantillaNombre">
+            <summary>
+            Nombre de la Plantilla
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Plantillas.PlantillaDto.Descripcion">
+            <summary>
+            Descripción de la Plantilla
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Plantillas.PlantillaDto.Version">
+            <summary>
+            Version de la Plantilla
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Plantillas.PlantillaDto.DescripcionDocumentos">
+            <summary>
+            Descripción Documento de la Plantilla
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Plantillas.PlantillaDto.AlfrescoId">
+            <summary>
+            id de la plantilla en repositorio de Alfresco
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Plantillas.PlantillaDto.AlfrescoURL">
+            <summary>
+            Url para accesar a la plantilla de Alfresco
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Plantillas.PlantillaDto.Estado">
+            <summary>
+            Estado de la Plantilla
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Plantillas.PlantillasImpresiones.Id">
+            <summary>
+            id de la Plantilla
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Plantillas.PlantillasImpresiones.NumeroImpresion">
+            <summary>
+            Numero Impresion Plantilla
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Respuestas.ArchivoPlantillaDto.Base64">
+            <summary>
+            Archivo en formato Base64
+            </summary>        
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Respuestas.ArchivoPlantillaDto.Nombre">
+            <summary>
+            Nombre de la Plantilla
+            </summary>
+        </member>
+        <member name="T:ServDocumentos.Core.Dtos.Comun.Respuestas.BitacoraEstadoCuentaRespuesta">
+            <summary>
+            Respuesta del prcedimiento ObtenerBitacorasPorMes
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Respuestas.BitacoraEstadoCuentaRespuesta.NumeroCliente">
+            <summary>
+            Numero del cliente
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Respuestas.BitacoraEstadoCuentaRespuesta.NumeroCuenta">
+            <summary>
+            Encoded key del cliente
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Respuestas.EstadoCuentaMensualProcResp.NumeroCliente">
+            <summary>
+            Número de Cliente
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Respuestas.EstadoCuentaMensualProcResp.NumeroCuenta">
+            <summary>
+            Número de Crédito
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Respuestas.MensajeErrorCriticoDto.CodigoRastreo">
+            <summary>
+            Código que genera el servicio para indenficar el Error Critico 
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Respuestas.MensajeErrorFuncionalDto.Origen">
+            <summary>
+            Nombre del Servicio donde se origina el Conflicto o la Excepción
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Respuestas.MensajeErrorFuncionalDto.Mensajes">
+            <summary>
+            Mensaje indicativo del Conflicto o la Excepción
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Respuestas.ResultadoDocumentoDto.Mensaje">
+            <summary>
+            Nombre(s) de los archivo(s) pdf, separados por "|"
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Respuestas.ResultadoDocumentoDto.Dato">
+            <summary>
+            Documento en Base64 (comprimido solo si se en la solicitud se pidió asi)
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Respuestas.ResultadoDocumentoDto.ListaDatos">
+            <summary>
+            lista de strings con el valor en formato Bae64 delos archivos obtenidos
+            (solo si se en la solicitud no se se pidió comprimido)
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Respuestas.ResultadoDocumentoDto.ListaArchivos">
+            <summary>
+            Lista de Documentos en bytes (comprimido solo si se en la solicitud se pidió asi)
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Respuestas.ResultadoDocumentoDto.ListaArchivosAlfresco">
+            <summary>
+            Lista de Archivos en caso de Solicitar guardadi en Alfresco
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Respuestas.ResultadoDocumentoDto.ArchivosGuardados">
+            <summary>
+            Lista de archivos almacenados
+            </summary>
+        </member>
+        <member name="T:ServDocumentos.Core.Dtos.Comun.Respuestas.ArchivoGuardado">
+            <summary>
+            Clase con las propiedades de un archivo guardado
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Respuestas.ArchivoGuardado.Nombre">
+            <summary>
+            Nombre del archivo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Respuestas.ArchivoGuardado.Url">
+            <summary>
+            Url de archivo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Respuestas.ArchivoGuardado.Id">
+            <summary>
+            Id de documento
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Respuestas.ArchivoGuardado.Mensaje">
+            <summary>
+            Mensaje
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Respuestas.ResultadoEstadoCuenta.Mensaje">
+            <summary>
+            Nombre(s) de los archivo(s) pdf
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Respuestas.ResultadoEstadoCuenta.Dato">
+            <summary>
+            Documento en Base64 
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Respuestas.ResultadoListadoPlantillas.listaPlantillas">
+            <summary>
+            Listado de Plantillas
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Respuestas.ResultadoUrlDocumeto.Mensaje">
+            <summary>
+            Nombre(s) de los archivo(s) pdf, separados por "|"
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Respuestas.ResultadoUrlDocumeto.Dato">
+            <summary>
+            Documento en Base64 (comprimido solo si se en la solicitud se pidió asi)
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Respuestas.ResultadoUrlDocumeto.ListaDatos">
+            <summary>
+            lista de strings con el valor en formato Bae64 delos archivos obtenidos
+            (solo si se en la solicitud no se se pidió comprimido)
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoDto.CampoNombre">
+            <summary>
+            Nombre del Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoDto.Descripcion">
+            <summary>
+            Descripcion del Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoDto.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoGetDto.CampoId">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoGetDto.CampoNombre">
+            <summary>
+            Nombre del Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoGetDto.Tipo">
+            <summary>
+            Tipo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoGetDto.DatoCampo">
+            <summary>
+            Dato Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoIdDto.CampoId">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoIdDto.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoInsDto.CampoNombre">
+            <summary>
+            Nombre del Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoInsDto.Descripcion">
+            <summary>
+            Descripcion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoInsDto.Tipo">
+            <summary>
+            Tipo de campo
+            </summary>
+            <example>Se compara contra Catalogo</example>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoInsDto.DatoConjunto">
+            <summary>
+            Dato Conjunto
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoInsDto.DatoCampo">
+            <summary>
+            Dato Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoInsDto.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoInsDto.DatoConjuntoGrupal">
+            <summary>
+            Dato Conjunto Grupal
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoInsDto.Ejemplo">
+            <summary>
+            Ejemplo del Valor
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoInsDto.ProcesoId">
+            <summary>
+            ProcesoId
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoInsDto.SubProcesoId">
+            <summary>
+            SubProcesoId
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoNombreDto.CampoNombre">
+            <summary>
+            Nombre del Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoNombreDto.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoPreviewDto.CampoNombre">
+            <summary>
+            Nombre del Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoPreviewDto.Tipo">
+            <summary>
+            Tipo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoPreviewDto.DatoCampo">
+            <summary>
+            Dato Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoPreviewDto.Ejemplo">
+            <summary>
+            Ejemplo del Valor
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoTipoGetDto.CampoTipoId">
+            <summary>
+            id del Tipo de Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoTipoGetDto.CampoTipo">
+            <summary>
+            Descripcion del Tipo Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoTipoGetDto.Estado">
+            <summary>
+            Estado del Tipo Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoTipoInsDto.CampoTipo">
+            <summary>
+            Nombre del Tipo de Campo 
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoTipoInsDto.Usuario">
+            <summary>
+            Nombre del Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoTipoUpdDto.CampoTipoId">
+            <summary>
+            id del tipo de Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoTipoUpdDto.CampoTipo">
+            <summary>
+            Descripcion del tipo de Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoTipoUpdDto.Usuario">
+            <summary>
+            Nombre del Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoUpdDto.CampoId">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoUpdDto.CampoNombre">
+            <summary>
+            Nombre del Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoUpdDto.Descripcion">
+            <summary>
+            Descripcion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoUpdDto.Tipo">
+            <summary>
+            Tipo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoUpdDto.DatoConjunto">
+            <summary>
+            Dato Conjunto
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoUpdDto.DatoCampo">
+            <summary>
+            Dato Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoUpdDto.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoUpdDto.DatoConjuntoGrupal">
+            <summary>
+            Dato Conjunto Grupal
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoUpdDto.Ejemplo">
+            <summary>
+            Ejemplo del Valor
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ClasificacionGetDto.ClasificacionId">
+            <summary>
+            Id de la Clasificacion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ClasificacionGetDto.Clasificacion">
+            <summary>
+            Nombre de la Clasificacion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ClasificacionGetDto.Empresa">
+            <summary>
+            Nombre de la Empresa
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ClasificacionIdDto.ClasificacionId">
+            <summary>
+            Id de la Clasificacion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ClasificacionIdDto.Usuario">
+            <summary>
+            Nombre del usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ClasificacionInsDto.Clasificacion">
+            <summary>
+            Nombre de la Clasificacion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ClasificacionInsDto.Usuario">
+            <summary>
+            Nombre del usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ClasificacionInsDto.Empresa">
+            <summary>
+            Nombre de la Empresa
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ClasificacionNombreDto.Clasificacion">
+            <summary>
+            Clasificacion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ClasificacionNombreDto.Usuario">
+            <summary>
+            Nombre del usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ClasificacionUpdDto.ClasificacionId">
+            <summary>
+            Id de la Clasificacion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ClasificacionUpdDto.Clasificacion">
+            <summary>
+            Nombre de la Clasificacion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ClasificacionUpdDto.Usuario">
+            <summary>
+            Nombre del usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.EstadoCuentaCreditoSolDto.ProcesoNombre">
+            <summary>
+            Nombre del proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.EstadoCuentaCreditoSolDto.SubProcesoNombre">
+            <summary>
+            Nombre del Subproceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.EstadoCuentaCreditoSolDto.NumeroCliente">
+            <summary>
+            Número de Cliente
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.EstadoCuentaCreditoSolDto.NumeroCredito">
+            <summary>
+            Número de Crédito
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.EstadoCuentaCreditoSolDto.Empresa">
+            <summary>
+            Empresa
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.EstadoCuentaCreditoSolDto.Comprimido">
+            <summary>
+            Lo regresa en zip
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.EstadoCuentaCreditoSolDto.Base64">
+            <summary>
+            Si no se pide en base 64 se regresa en bytes
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.EstadoCuentaMensualSol.Proceso">
+            <summary>
+            Nombre del proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.EstadoCuentaMensualSol.SubProceso">
+            <summary>
+            Nombre del Subproceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.EstadoCuentaMensualSol.NumeroCliente">
+            <summary>
+            Número de Cliente
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.EstadoCuentaMensualSol.NumeroCuenta">
+            <summary>
+            Número de Crédito
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.EstadoCuentaMensualSol.Fecha">
+            <summary>
+            Mes
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.EstadoCuentaMensualSol.Empresa">
+            <summary>
+            Empresa
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.EstadoCuentaMensualSol.Comprimido">
+            <summary>
+            Lo regresa en zip
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.EstadoCuentaMensualSol.Base64">
+            <summary>
+            Si no se pide en base 64 se regresa en bytes
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.EstadoCuentaMensualSol.Grupal">
+            <summary>
+            Si no se especifica es porque se trata de un crédito individual
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.EstadosCuentaMensualProcSol.Empresa">
+            <summary>
+            Empresa
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.EstadosCuentaMensualProcSol.Fecha">
+            <summary>
+            Periodo Año y Mes
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.EstadosCuentaObtieneSol.Empresa">
+            <summary>
+            Empresa
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.EstadosCuentaObtieneSol.fecha">
+            <summary>
+            Periodo Año y Mes
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.EstadosCuentaObtieneSol.cantidad">
+            <summary>
+            Cantidad a Procesar
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.GeneralesGetDto.GeneralId">
+            <summary>
+            Id de los generales
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.GeneralesGetDto.ProcesoId">
+            <summary>
+            Id del Proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.GeneralesGetDto.CampoNombre">
+            <summary>
+            Nombre del Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.GeneralesIdDto.GeneralId">
+            <summary>
+            Id de los Generales
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.GeneralesIdDto.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.GeneralesInsDto.ProcesoId">
+            <summary>
+            Id del Proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.GeneralesInsDto.CampoNombre">
+            <summary>
+            Nombre del Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.GeneralesInsDto.Valor">
+            <summary>
+            Valor del Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.GeneralesInsDto.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.GeneralesNombreDto.ProcesoId">
+            <summary>
+            Id del Proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.GeneralesNombreDto.CampoNombre">
+            <summary>
+            Nombre del Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.GeneralesNombreDto.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.GeneralesUpdDto.GeneralId">
+            <summary>
+            Id del General
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.GeneralesUpdDto.ProcesoId">
+            <summary>
+            Id del Proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.GeneralesUpdDto.CampoNombre">
+            <summary>
+            Nombre del Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.GeneralesUpdDto.Valor">
+            <summary>
+            Valor del Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.GeneralesUpdDto.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.LoginDto.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.LoginDto.Contrasena">
+            <summary>
+            Contraseña
+            </summary>        
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ObtenerDatosDto.Proceso">
+            <summary>
+            Tipo de proceso a seguir, los valores permitodos son 1 y dos
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ObtenerDatosJsonDatosDto.Proceso">
+            <summary>
+            Tipo de proceso a seguir, los valores permitodos son 1 y dos
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ObtenerDatosJsonDatosDto.JsonSolicitudData">
+            <summary>
+            Json Cliente engine
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ObtenerDatosJsonDto.Proceso">
+            <summary>
+            Tipo de proceso a seguir, los valores permitodos son 1 y dos
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ObtenerDatosJsonDto.JsonSolicitud">
+            <summary>
+            Json Cliente engine
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ObtenerPlantillasProcesoDto.Proceso">
+            <summary>
+            Tipo de proceso a seguir, los valores permitodos son deacuerdo al Enum[TipoProceso]
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ObtenerPlantillasProcesoDto.SubProcesoNombre">
+            <summary>
+            Nombre del SubProceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaCampoGetDto.PlantillaId">
+            <summary>
+            Id de la Plantilla 
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaCampoGetDto.CampoId">
+            <summary>
+            Id del Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaCampoIdcDto.PlantillaId">
+            <summary>
+            Id de la Plantilla 
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaCampoIdcDto.CampoId">
+            <summary>
+            Id del Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaCampoIdcDto.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaCampoIdDto.PlantillaCampoId">
+            <summary>
+            Id de la Plantilla Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaCampoIdDto.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaCampoInsDto.PlantillaId">
+            <summary>
+            Id de la Plantilla
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaCampoInsDto.ListaCampoIds">
+            <summary>
+            Lista Id's Campos
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaCampoInsDto.Usuario">
+            <summary>
+            usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaCampoPSGet.ProcesoId">
+            <summary>
+            Id del Proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaCampoPSGet.SubprocesoId">
+            <summary>
+            Id del SubProceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaCampoPSGet.CampoNombre">
+            <summary>
+            Nombre del Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaCampoPSGet.CampoDescripcion">
+            <summary>
+            Descripcion del Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaGetDto.PlantillaId">
+            <summary>
+            Id de la Plantilla
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaGetDto.PlantillaNombre">
+            <summary>
+            Nombre de la Plantilla
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaGetDto.Descripcion">
+            <summary>
+            Descripcion de la Plantilla
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaGetDto.AlfrescoId">
+            <summary>
+            Id Alfresco
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaGetDto.Estado">
+            <summary>
+            Estado
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaIdDto.PlantillaId">
+            <summary>
+            Id de la Plantilla
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaIdDto.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaInsDto.Archivo64">
+            <summary>
+            Archivo de la Plantilla
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaInsDto.Extension">
+            <summary>
+            Extension del Archivo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaInsDto.Descripcion">
+            <summary>
+            Descripción de la Plantilla
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaInsDto.Version">
+            <summary>
+            Version de la Plantilla
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaInsDto.Usuario">
+            <summary>
+            Usuario Creacion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaInsDto.DescripcionDocumentos">
+            <summary>
+            Descripcion del Documento
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaInsDto.SubProcesoId">
+            <summary>
+            SubProcesoId
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaInsDto.RECA">
+            <summary>
+            RECA asignado al Documento
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaInsDto.Tipo">
+            <summary>
+            Tipo de Uso I=Individual,G= Grupal
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaNombreDto.PlantillaNombre">
+            <summary>
+            Nombre de la Plantilla
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaNombreDto.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaRegDto.Extension">
+            <summary>
+            Extension del Archivo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaRegDto.Descripcion">
+            <summary>
+            Descripción de la Plantilla
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaRegDto.Version">
+            <summary>
+            Version de la Plantilla
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaRegDto.Usuario">
+            <summary>
+            Usuario Creacion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaRegDto.DescripcionDocumentos">
+            <summary>
+            Descripcion del  Documento
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaTipoSubProcesoDelDto.Usuario">
+            <summary>
+            Nombre del Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaTipoSubProcesoGetDto.Id">
+            <summary>
+            id del Tipo de Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaTipoSubProcesoGetDto.Tipo">
+            <summary>
+            Descripcion del Tipo Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaTipoSubProcesoGetDto.DescripcionCorta">
+            <summary>
+            Descripcion del Tipo Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaTipoSubProcesoUpdDto.Tipo">
+            <summary>
+            id del tipo de Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaTipoSubProcesoUpdDto.Descripcion">
+            <summary>
+            Descripcion del tipo de Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaTipoSubProcesoUpdDto.Usuario">
+            <summary>
+            Nombre del Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaUpdDto.Archivo64">
+            <summary>
+            Archivo de la Plantilla
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaUpdDto.PlantillaId">
+            <summary>
+            Id de la Plantilla
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaUpdDto.PlantillaNombre">
+            <summary>
+            Nombre de la Plantilla
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaUpdDto.Descripcion">
+            <summary>
+            Descripcion de la Plantilla
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaUpdDto.Version">
+            <summary>
+            Version de la Plantilla
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaUpdDto.DescripcionDocumentos">
+            <summary>
+            Descripcion Documentos de la Plantilla
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaUpdDto.AlfrescoId">
+            <summary>
+            Id de Alfresco
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaUpdDto.AlfrescoUrl">
+            <summary>
+            Url de Alfresco
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaUpdDto.usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoCampoDelDto.ProcesoId">
+            <summary>
+            Id del Proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoCampoDelDto.CampoId">
+            <summary>
+            Id del Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoCampoDelDto.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoCampoGetDto.ProcesoCampoId">
+            <summary>
+            Id del Proceso Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoCampoGetDto.ProcesoId">
+            <summary>
+            Id del Proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoCampoGetDto.CampoId">
+            <summary>
+            Id del  Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoCampoGetDto.CampoNombre">
+            <summary>
+            Nombre del Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoCampoIdDto.ProcesoCampoId">
+            <summary>
+            Id del Proceso Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoCampoIdDto.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoCampoInsDto.ProcesoId">
+            <summary>
+            Id del Proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoCampoInsDto.CampoId">
+            <summary>
+            Id del Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoCampoInsDto.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoCampoUpdDto.ProcesoCampoId">
+            <summary>
+            Id del Proceso Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoCampoUpdDto.ProcesoId">
+            <summary>
+            Id del Proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoCampoUpdDto.CampoId">
+            <summary>
+            Id del Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoCampoUpdDto.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoDto.Empresa">
+            <summary>
+            Nombre de la Empresa
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoDto.ProcesoNombre">
+            <summary>
+            Nombre del Proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoDto.Descripcion">
+            <summary>
+            Descripcion del Proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoDto.ClasificacionId">
+            <summary>
+            Id de la Clasificacion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoDto.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoGetDto.Empresa">
+            <summary>
+            Nombre de la Empresa
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoGetDto.ProcesoId">
+            <summary>
+            Id del Proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoGetDto.ProcesoNombre">
+            <summary>
+            Nombre del Proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoGetDto.ClasificacionId">
+            <summary>
+            Id de la Clasificacion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoGetDto.ClasificacionNombre">
+            <summary>
+            Nombre de la Clasificacion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoIdDto.Empresa">
+            <summary>
+            Nombre de la Empresa
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoIdDto.ProcesoId">
+            <summary>
+            Id del Proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoIdDto.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoNombreDto.Empresa">
+            <summary>
+            Nombre de la Empresa
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoNombreDto.ProcesoNombre">
+            <summary>
+            Nombre del Proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoNombreDto.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoSubDto.ProcesoNombre">
+            <summary>
+            Nombre del proceso, los valores permitodos son deacuerdo al Enum[TipoProceso]
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoSubDto.SubProcesoNombre">
+            <summary>
+            Nombre del SubProceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoUpdDto.ProcesoId">
+            <summary>
+            id del proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoUpdDto.Empresa">
+            <summary>
+            Nombre de la Empresa
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoUpdDto.ProcesoNombre">
+            <summary>
+            Nombre del Proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoUpdDto.Descripcion">
+            <summary>
+            Descripcion del Proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoUpdDto.ClasificacionId">
+            <summary>
+            Id de la Clasificacion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoUpdDto.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SolicitudBaseDto.Usuario">
+            <summary>
+            Clave del usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SolicitudBaseDto.NumeroCredito">
+            <summary>
+            Número de credito
+            </summary>        
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SolicitudBaseDto.NumeroCliente">
+            <summary>
+            Número del cliente
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SolictudDocumentoBaseDto.ProcesoNombre">
+            <summary>
+            Nombre del proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SolictudDocumentoBaseDto.SubProcesoNombre">
+            <summary>
+            Nombre del Subproceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SolictudDocumentoBaseDto.Separado">
+            <summary>
+            Indica si el documento viene en archivos separados o individuales (true y false respectivamente)
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SolictudDocumentoBaseDto.Comprimido">
+            <summary>
+            Indica si los documentos se encuentra en un archivo comprimido en formato zip
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SolictudDocumentoBaseDto.Usuario">
+            <summary>
+            Clave del usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SolictudDocumentoBaseDto.Base64">
+            <summary>
+            Indica si el archivos se codifica a Base64 para su entrega 
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SolictudDocumentoBaseDto.ListaPlantillasIds">
+            <summary>
+            Listado de Id's de las plantillas que se desean obtner. 
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SolictudDocumentoDto.ProcesoNombre">
+            <summary>
+            Nombre del proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SolictudDocumentoDto.SubProcesoNombre">
+            <summary>
+            Nombre del Subproceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SolictudDocumentoDto.NumeroCredito">
+            <summary>
+            Número de Crédito
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SolictudDocumentoDto.NumeroCliente">
+            <summary>
+            Número de Cliente
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SolictudDocumentoDto.Separado">
+            <summary>
+            Indica si el documento viene en archivos separados o individuales (true y false respectivamente)
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SolictudDocumentoDto.Comprimido">
+            <summary>
+            Indica si los documentos se encuentra en un archivo comprimido en formato zip
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SolictudDocumentoDto.Usuario">
+            <summary>
+            Clave del usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SolictudDocumentoDto.Base64">
+            <summary>
+            Indica si el archivos se codifica a Base64 para su entrega 
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SolictudDocumentoDto.ListaPlantillasIds">
+            <summary>
+            Listado de Id's de las plantillas que se desean obtner. 
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SolictudDocumentoDto.Alfresco">
+            <summary>
+            Indica si el archivos se codifica a Base64 para su entrega 
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SolictudDocumentoDto._guardarDocumento">
+            <summary>
+            Tipo de gestor para guardar documentos
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SolictudDocumentoDto.GuardarDocumento">
+            <summary>
+            Tipo del gestor para guardar documentos
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SolictudDocumentoJsonDatosDto.JsonSolicitudData">
+            <summary>
+            Datos para ser llenados 
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SolictudDocumentoJsonDto.JsonSolicitud">
+            <summary>
+            Json Cliente engine
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SolictudVistaPreviaDto.ProcesoId">
+            <summary>
+            Id del Proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SolictudVistaPreviaDto.SubProcesoId">
+            <summary>
+            Id del Proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SolictudVistaPreviaDto.NumeroCliente">
+            <summary>
+            Número de Cliente
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SolictudVistaPreviaDto.NumeroCredito">
+            <summary>
+            Número de Crédito
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SolictudVistaPreviaDto.PlantillaBase64">
+            <summary>
+            Plantilla
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SolictudVistaPreviaDto.ListaCampos">
+            <summary>
+            Listado de Campos
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoCampoDelDto.SubProcesoId">
+            <summary>
+            Id del Proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoCampoDelDto.CampoId">
+            <summary>
+            Id del Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoCampoDelDto.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoCampoGetDto.SubProcesoCampoId">
+            <summary>
+            Id del Proceso Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoCampoGetDto.SubProcesoId">
+            <summary>
+            Id del Proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoCampoGetDto.CampoId">
+            <summary>
+            Id del  Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoCampoGetDto.CampoNombre">
+            <summary>
+            Nombre del Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoCampoIdDto.SubProcesoCampoId">
+            <summary>
+            Id del SubProceso Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoCampoIdDto.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoCampoInsDto.SubProcesoId">
+            <summary>
+            Id del Proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoCampoInsDto.CampoId">
+            <summary>
+            Id del Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoCampoInsDto.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoCampoUpdDto.SubProcesoCampoId">
+            <summary>
+            Id del Proceso Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoCampoUpdDto.SubProcesoId">
+            <summary>
+            Id del Proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoCampoUpdDto.CampoId">
+            <summary>
+            Id del Campo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoCampoUpdDto.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoClasDto.Empresa">
+            <summary>
+            Nombre de la Empresa
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoClasDto.ProcesoId">
+            <summary>
+            Proceso Id
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoClasDto.SubProcesoId">
+            <summary>
+            SubProceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoClasDto.ClasificacionId">
+            <summary>
+            Nombre de la Clasificacion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoClasifIns.Empresa">
+            <summary>
+            Nombre de la Empresa
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoClasifIns.SubProcesoNombre">
+            <summary>
+            Nombre del SubProceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoClasifIns.Descripcion">
+            <summary>
+            Descripcion del SubProceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoClasifIns.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoClasifIns.ClasificacionId">
+            <summary>
+            Id de la Clasificacion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoDto.SubProcesoNombre">
+            <summary>
+            Nombre del SubProceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoDto.Descripcion">
+            <summary>
+            Descripcion del SubProceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoDto.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoDto.ProcesoId">
+            <summary>
+            Proceso Id
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoGetDto.SubProcesoId">
+            <summary>
+            Id del Proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoGetDto.SubProcesoNombre">
+            <summary>
+            Nombre del SubProceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoGetDto.ProcesoId">
+            <summary>
+            Proceso Id
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoGetDto.ProcesoNombre">
+            <summary>
+            Nombre del Proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoGetDto.ProcesoDescripcion">
+            <summary>
+            Nombre del Proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoIdDto.SubProcesoId">
+            <summary>
+            Id del Proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoIdDto.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoNombreDto.SubProcesoNombre">
+            <summary>
+            Nombre del Proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoNombreDto.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoPlantilla.PlantillaId">
+            <summary>
+            id de la Plantilla
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoPlantilla.RECA">
+            <summary>
+            RECA
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoPlantilla.Tipo">
+            <summary>
+            Tipo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubprocesoPlantillaDelDto.SubProcesoId">
+            <summary>
+            id del SubProceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubprocesoPlantillaDelDto.PlantillaId">
+            <summary>
+            id de la Plantilla
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubprocesoPlantillaDelDto.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubprocesoPlantillaGetDto.SubpPantId">
+            <summary>
+            id del SubProceso Plantilla
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubprocesoPlantillaGetDto.SubProcesoId">
+            <summary>
+            id del SubProceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubprocesoPlantillaGetDto.PlantillaId">
+            <summary>
+            Nombre del Proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubprocesoPlantillaGetDto.Reca">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubprocesoPlantillaGetDto.Tipo">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoPlantillaInsDto.SubProcesoId">
+            <summary>
+            id del SubProceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoPlantillaInsDto.listadoPlantillas">
+            <summary>
+            Listado de Plantillas
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoPlantillaInsDto.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoPlantillaUpdDto.SubProcesoPlantillaId">
+            <summary>
+            id del SubProceso Plantilla
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoPlantillaUpdDto.SubProcesoId">
+            <summary>
+            id del SubProceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoPlantillaUpdDto.PlantillaId">
+            <summary>
+            id de la Plantilla
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoPlantillaUpdDto.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoPlantillaUpdDto.RECA">
+            <summary>
+            RECA
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoPlantillaUpdDto.Tipo">
+            <summary>
+            Tipo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoUpdDto.SubProcesoId">
+            <summary>
+            id del sub proceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoUpdDto.SubProcesoNombre">
+            <summary>
+            Nombre del SubProceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoUpdDto.Descripcion">
+            <summary>
+            Descripcion del SubProceso
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoUpdDto.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoUpdDto.ProcesoId">
+            <summary>
+            Tipo de Proceso
+            </summary>
+        </member>
+        <member name="T:ServDocumentos.Core.Dtos.DatosMambu.AccountBalances">
+            <summary>
+            Balances en la transaccion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.AccountBalances.TotalBalance">
+            <summary>
+            Balance total
+            </summary>
+        </member>
+        <member name="T:ServDocumentos.Core.Dtos.DatosMambu.CanalTransaccionDto">
+            <summary>
+            Canal de transaccion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.CanalTransaccionDto.Id">
+            <summary>
+            Identificador
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.CanalTransaccionDto.EncodedKey">
+            <summary>
+            Encoded key
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.CanalTransaccionDto.Name">
+            <summary>
+            Nombre
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.DatosAdicionales.Grupo">
+            <summary>
+            Encoded key del grupo
+            </summary>
+        </member>
+        <member name="T:ServDocumentos.Core.Dtos.DatosMambu.Enums.DetailsLevel">
+            <summary>
+            Nivel de detalle de la peticion a mambu
+            </summary>
+        </member>
+        <member name="F:ServDocumentos.Core.Dtos.DatosMambu.Enums.DetailsLevel.BASIC">
+            <summary>
+            Basico
+            </summary>
+        </member>
+        <member name="F:ServDocumentos.Core.Dtos.DatosMambu.Enums.DetailsLevel.FULL">
+            <summary>
+            Completo
+            </summary>
+        </member>
+        <member name="T:ServDocumentos.Core.Dtos.DatosMambu.Enums.TipoTransaccionAhorro">
+            <summary>
+            Tipo de transaccion de ahorro
+            </summary>
+        </member>
+        <member name="T:ServDocumentos.Core.Dtos.DatosMambu.Enums.TipoTransaccionCredito">
+            <summary>
+            Tipo de transaccion de credito
+            </summary>
+        </member>
+        <member name="T:ServDocumentos.Core.Dtos.DatosMambu.GrupoDto">
+            <summary>
+            Grupo DTO
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.GrupoDto.EncodedKey">
+            <summary>
+            Encoded key
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.GrupoDto.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.GrupoDto.GroupName">
+            <summary>
+            Nombre del grupo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.GrupoDto.Datos_Moral">
+            <summary>
+            Nombre del grupo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.GrupoDto.Direccion_Grupo">
+            <summary>
+            Direccion del grupo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.GrupoDto.EmailAddress">
+            <summary>
+            Correo del grupo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.GrupoDto.MobilePhone">
+            <summary>
+            Número de teléfono del grupo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.GrupoDto.HomePhone">
+            <summary>
+            Número de casa del grupo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.DatosMoral.RFC">
+            <summary>
+            RFC
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.Direccion.Municipio_Direccion_Grupo">
+            <summary>
+            Municipio Direccion Grupo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.Direccion.Numero_Int_Direccion_Grupo">
+            <summary>
+            Municipio Direccion Grupo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.Direccion.Colonia_Direccion_Grupo">
+            <summary>
+            Municipio Direccion Grupo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.Direccion.Numero_Ext_Direccion_Grupo">
+            <summary>
+            Municipio Direccion Grupo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.Direccion.Estado_Direccion_Grupo">
+            <summary>
+            Municipio Direccion Grupo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.Direccion.Calle_Direccion_Grupo">
+            <summary>
+            Municipio Direccion Grupo
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.Direccion.CP_Direccion_Grupo">
+            <summary>
+            Municipio Direccion Grupo
+            </summary>
+        </member>
+        <member name="T:ServDocumentos.Core.Dtos.DatosMambu.ProductoDto">
+            <summary>
+            Producto obtenido del API de MAMBU
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.ProductoDto.EncodedKey">
+            <summary>
+            Encoded key del producto
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.ProductoDto.Id">
+            <summary>
+            Id del producto
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.ProductoDto.Name">
+            <summary>
+            Nombre del producto
+            </summary>
+        </member>
+        <member name="T:ServDocumentos.Core.Dtos.DatosMambu.Solicitudes.FilterCriteria">
+            <summary>
+            Criterio para filtrar
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.Solicitudes.FilterCriteria.Field">
+            <summary>
+            Nombre del campo para filtrar
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.Solicitudes.FilterCriteria.Operator">
+            <summary>
+            Operador par realizar la comparacion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.Solicitudes.FilterCriteria.Value">
+            <summary>
+            Valor a comparar
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.Solicitudes.FilterCriteria.SecondValue">
+            <summary>
+            Segundo valor a comprar (Usado con el operador BETWEEN)
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.Solicitudes.FilterCriteria.Values">
+            <summary>
+            Valores a comprar (usado con el operado IN)
+            </summary>
+        </member>
+        <member name="T:ServDocumentos.Core.Dtos.DatosMambu.Solicitudes.SearchCriteria">
+            <summary>
+            Criterio de busqueda
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.Solicitudes.SearchCriteria.FilterCriteria">
+            <summary>
+            Lista de condiciones para realizar filtro
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.Solicitudes.SearchCriteria.SortingCriteria">
+            <summary>
+            Criterios de ordenamiento
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.Solicitudes.SearchCriteria.Parameters">
+            <summary>
+            Parametros de la obtencion de los datos
+            </summary>
+        </member>
+        <member name="M:ServDocumentos.Core.Dtos.DatosMambu.Solicitudes.SearchCriteria.AgregarFiltro(System.String,System.String,System.String)">
+            <summary>
+            Agregar un filtro a los criterios de busqueda
+            </summary>
+            <param name="field">Nombre del campo</param>
+            <param name="operador">Operador para comprar</param>
+            <param name="value">Valor del campo</param>
+        </member>
+        <member name="M:ServDocumentos.Core.Dtos.DatosMambu.Solicitudes.SearchCriteria.AgregarFiltroIn(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Agrega un filtro IN
+            </summary>
+            <param name="field">Nombre del campo</param>
+            <param name="values">Valores (se usa con el operador IN)</param>
+        </member>
+        <member name="M:ServDocumentos.Core.Dtos.DatosMambu.Solicitudes.SearchCriteria.AgregarFiltroBetween(System.String,System.String,System.String)">
+            <summary>
+            Agrega un filtro between
+            </summary>
+            <param name="field">Nombre del campo</param>
+            <param name="value">Valor de inicio</param>
+            <param name="secondValue">Valor final</param>
+        </member>
+        <member name="M:ServDocumentos.Core.Dtos.DatosMambu.Solicitudes.SearchCriteria.AgregarOrdenamiento(System.String,System.String)">
+            <summary>
+            Agrega ordenamiento
+            </summary>
+            <param name="field">Nombre del campo</param>
+            <param name="order">Tipo de ordenamiento (ASC, DESC)</param>
+        </member>
+        <member name="M:ServDocumentos.Core.Dtos.DatosMambu.Solicitudes.SearchCriteria.AgregarLimite(System.Int32)">
+            <summary>
+            Agregar limite
+            </summary>
+            <param name="limite">Cantidad de registro a obtener</param>
+        </member>
+        <member name="M:ServDocumentos.Core.Dtos.DatosMambu.Solicitudes.SearchCriteria.AgregarOffset(System.Int32)">
+            <summary>
+            Agregar offset
+            </summary>
+            <param name="offset">Cantidad de registros a omitir</param>
+        </member>
+        <member name="T:ServDocumentos.Core.Dtos.DatosMambu.Solicitudes.SearchParameters">
+            <summary>
+            Parametros de busqueda
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.Solicitudes.SearchParameters.Limit">
+            <summary>
+            Cantidad de registros a obtener
+            </summary>
+        </member>
+        <member name="T:ServDocumentos.Core.Dtos.DatosMambu.Solicitudes.SortingCriteria">
+            <summary>
+            Cirterios de ordenamiento
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.Solicitudes.SortingCriteria.Field">
+            <summary>
+            Nombre del campo para ordenar
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.Solicitudes.SortingCriteria.Order">
+            <summary>
+            Orden (ASC, DESC)
+            </summary>
+        </member>
+        <member name="T:ServDocumentos.Core.Dtos.DatosMambu.TransaccionAhorroDetalleDto">
+            <summary>
+            Transaccion de ahorro del api de mambu
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.TransaccionAhorroDetalleDto.Id">
+            <summary>
+            Id de la transaccion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.TransaccionAhorroDetalleDto.EncodedKey">
+            <summary>
+            Encoded Key de la transaccion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.TransaccionAhorroDetalleDto.ValueDate">
+            <summary>
+            Value date
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.TransaccionAhorroDetalleDto.Type">
+            <summary>
+            Tipo de transaccion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.TransaccionAhorroDetalleDto.Amount">
+            <summary>
+            Cantidad de la transaccion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.TransaccionAhorroDetalleDto.CurrencyCode">
+            <summary>
+            Moneda
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.TransaccionAhorroDetalleDto.Notes">
+            <summary>
+            Comentario de la transaccion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.TransaccionAhorroDetalleDto.AccountBalances">
+            <summary>
+            Balances
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.TransaccionAhorroDetalleDto.TransactionDetails">
+            <summary>
+            Detalles de la transaccion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.TransaccionAhorroDetalleDto._Transferencia_SPEI">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.TransaccionAhorroDetalleDto.TypeDescription">
+            <summary>
+            Descripcion del tipo de transaccion
+            </summary>
+        </member>
+        <member name="T:ServDocumentos.Core.Dtos.DatosMambu.TransaccionAhorroDto">
+            <summary>
+            Transaccion de ahorro del api de mambu
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.TransaccionAhorroDto.Id">
+            <summary>
+            Id de la transaccion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.TransaccionAhorroDto.EncodedKey">
+            <summary>
+            Encoded Key de la transaccion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.TransaccionAhorroDto.ValueDate">
+            <summary>
+            Value date
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.TransaccionAhorroDto.Type">
+            <summary>
+            Tipo de transaccion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.TransaccionAhorroDto.Amount">
+            <summary>
+            Cantidad de la transaccion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.TransaccionAhorroDto.CurrencyCode">
+            <summary>
+            Moneda
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.TransaccionAhorroDto.Notes">
+            <summary>
+            Comentario de la transaccion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.TransaccionAhorroDto.AccountBalances">
+            <summary>
+            Balances
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.TransaccionAhorroDto.TransactionDetails">
+            <summary>
+            Detalles de la transaccion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.TransaccionAhorroDto.TypeDescription">
+            <summary>
+            Descripcion del tipo de transaccion
+            </summary>
+        </member>
+        <member name="T:ServDocumentos.Core.Dtos.DatosMambu.TransaccionCreditoDto">
+            <summary>
+            Respuesta de transaccion de credito de mamabu
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.TransaccionCreditoDto.ValueDate">
+            <summary>
+            Fecha de la transaccion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.TransaccionCreditoDto.Type">
+            <summary>
+            Tipo de transaccion
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.TransaccionCreditoDto.Amount">
+            <summary>
+            Cantidad
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.TransaccionCreditoDto.Taxes">
+            <summary>
+            Taxes
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.TransaccionCreditoDto.AffectedAmounts">
+            <summary>
+            Montos afectados
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.TransaccionCreditoDto.AccountBalances">
+            <summary>
+            Balances
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.TransaccionCreditoDto.AdjustmentTransactionKey">
+            <summary>
+            Ajuste de transaccion 
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.TransaccionCreditoDto.TypeDescription">
+            <summary>
+            Descripcion del tipo de transaccion
+            </summary>
+        </member>
+        <member name="T:ServDocumentos.Core.Dtos.DatosMambu.Taxes">
+            <summary>
+            Taxes
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.Taxes.TaxOnFeesAmount">
+            <summary>
+            Tax on fees amount
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.Taxes.TaxOnPenaltyAmount">
+            <summary>
+            Tax on penalty amount
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.Taxes.TaxOnInterestAmount">
+            <summary>
+            Tax on interest amount
+            </summary>
+        </member>
+        <member name="T:ServDocumentos.Core.Dtos.DatosMambu.AffectedAmounts">
+            <summary>
+            Montos afectados
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.AffectedAmounts.PrincipalAmount">
+            <summary>
+            Monto principal
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.AffectedAmounts.InterestAmount">
+            <summary>
+            Monto interes
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.AffectedAmounts.FeesAmount">
+            <summary>
+            Monto cuota
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Dtos.DatosMambu.AffectedAmounts.PenaltyAmount">
+            <summary>
+            Monto multa
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Entidades.Comun.DatosJson.Json">
+            <summary>
+            Contiene la informacion del documento en formato json
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Entidades.Comun.Plantillas.Base64">
+            <summary>
+            Plantilla en base 64
+            </summary>
+        </member>
+        <member name="T:ServDocumentos.Core.Enumeradores.TipoGestorDocumentos">
+            <summary>
+            Define los provedores para almacenar documentos
+            </summary>
+        </member>
+        <member name="F:ServDocumentos.Core.Enumeradores.TipoGestorDocumentos.Digipro">
+            <summary>
+            Digipro
+            </summary>
+        </member>
+        <member name="M:ServDocumentos.Core.Helpers.Conversiones.NumberToText.Convert(System.Decimal)">
+            <summary>
+            Converts a numeric value to words suitable for the portion of
+            a check that writes out the amount.
+            </summary>
+            <param name="value">Value to be converted</param>
+            <returns></returns>
+        </member>
+        <member name="M:ServDocumentos.Core.Helpers.HTTPClientWrapper`1.Get(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Diccionario que contiene los parámetros del query string. El key-pair representa el nombre del campo y su valor, respectivamente. 
+            </summary>
+            <param name="url"> Url de la api a llamar</param>
+            <param name="parametros">Parárametros del query string. El key-value representa el campo y su valor</param>
+            <returns>Valor genérico T</returns>
+        </member>
+        <member name="M:ServDocumentos.Core.Helpers.HTTPClientWrapper`1.PostRequestEngineJson(System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.String)">
+            <summary>
+            Metodo que ejecuta el llamado a un EndPoint de un API enviando en el body de la solicitud un JSON
+            </summary>
+            <param name="url"></param>
+            <param name="user"></param>
+            <param name="password"></param>
+            <param name="headers"></param>
+            <param name="paraBody"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ServDocumentos.Core.Mensajes.MensajesDataAnnotations">
+            <summary>
+              Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Mensajes.MensajesDataAnnotations.ResourceManager">
+            <summary>
+              Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Mensajes.MensajesDataAnnotations.Culture">
+            <summary>
+              Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+              búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Mensajes.MensajesDataAnnotations.Rango">
+            <summary>
+              Busca una cadena traducida similar a El valor del campo [{0}] debe estar en el rango de  [{1}] y [{2}].
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Mensajes.MensajesDataAnnotations.Requerido">
+            <summary>
+              Busca una cadena traducida similar a El valor del campo [{0}] es obligatorio.
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Mensajes.MensajesDataAnnotations.EnumCampoTipo">
+            <summary>
+              Busca una cadena traducida similar a El valor del campo [{0}] no es un Tipo de Campo válido.
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Mensajes.MensajesDataAnnotations.Empresa">
+            <summary>
+              Busca una cadena traducida similar a El valor del campo [{0}] no es un Tipo de Campo válido.
+            </summary>
+        </member>
+        <member name="T:ServDocumentos.Core.Mensajes.MensajesServicios">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Mensajes.MensajesServicios.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Mensajes.MensajesServicios.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Mensajes.MensajesServicios.CreditoNoEncontrado">
+            <summary>
+              Looks up a localized string similar to No se encontro el crédito .
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Mensajes.MensajesServicios.ErrorDeserealizacion">
+            <summary>
+              Looks up a localized string similar to Ocurrio Un error al Deserealizar el Objecto.
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Mensajes.MensajesServicios.ErrorObtenerDocumentos">
+            <summary>
+              Looks up a localized string similar to No se encontraron documentos asociados al SubProceso..
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Mensajes.MensajesServicios.ErrorServidor">
+            <summary>
+              Looks up a localized string similar to SE PRODUJO UN ERROR EN EL SERVIDOR.
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Mensajes.MensajesServicios.ImagenDinamicaError">
+            <summary>
+              Looks up a localized string similar to iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAA7AAAAOwBeShxvQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAJoSURBVFiF7ddLiI1hHMfxj3FL7pcot8IshlhIpJRmSinFQpJEIllQrMhkFqzYyRopl1xCWdi5FSaxcilELmXBNI0RZcIYi/87zjtn3nPmnOM0LPzqWZz3PM///32f5//8nuelb23ET3RVsZ3vDj6oBICpeIpdJfQtReswpxwA+IRrVQJYmAaoqVLQipWege2oz+hTh8m4UCTOazTh+58AbMA33Mvr86qPGHOxB7VifcuG6FYzGisYtwnteI9LGNxH/8YkF3rWwA+V07ejAUtwrgSI30oDbMPxCgGIrVo2RBrgFT5WmLwGY8UyrE5ASoJIA5wWhViuvmAa2pJ2N4FZja19DU7vgs34WgHAZczQ21Mu [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Mensajes.MensajesServicios.ResultadoOK">
+            <summary>
+              Looks up a localized string similar to OK.
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Mensajes.MensajesServicios.ServicioCampos">
+            <summary>
+              Looks up a localized string similar to Servicio Campos.
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Mensajes.MensajesServicios.ServicioClasificaciones">
+            <summary>
+              Looks up a localized string similar to Servicio Clasificaciones.
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Mensajes.MensajesServicios.ServicioDatos">
+            <summary>
+              Looks up a localized string similar to Servicio Datos.
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Mensajes.MensajesServicios.ServicioDocumentos">
+            <summary>
+              Looks up a localized string similar to Servicio Documentos.
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Mensajes.MensajesServicios.ServicioExterno">
+            <summary>
+              Looks up a localized string similar to Servicio Externo.
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Mensajes.MensajesServicios.ServicioGenerales">
+            <summary>
+              Looks up a localized string similar to Servicio Generales.
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Mensajes.MensajesServicios.ServicioPlantillas">
+            <summary>
+              Looks up a localized string similar to Servicio Plantillas.
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Mensajes.MensajesServicios.ServicioPlantillasCampos">
+            <summary>
+              Looks up a localized string similar to Servicio Plantillas . Campos.
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Mensajes.MensajesServicios.ServicioProcesos">
+            <summary>
+              Looks up a localized string similar to Servicio Procesos.
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Mensajes.MensajesServicios.ServicioProcesosCampos">
+            <summary>
+              Looks up a localized string similar to Servicio Procesos - Campos.
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Mensajes.MensajesServicios.ServiciosFuncionando">
+            <summary>
+              Looks up a localized string similar to Servicios en Operación.
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Mensajes.MensajesServicios.ServicioSubProcesos">
+            <summary>
+              Looks up a localized string similar to Servicio SubProcesos.
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Mensajes.MensajesServicios.ServicioSubProcesosCampos">
+            <summary>
+              Looks up a localized string similar to Servcio SubProcesos - Campos.
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Mensajes.MensajesServicios.ServicioSubProcesosPlantillas">
+            <summary>
+              Looks up a localized string similar to Servicio SubProcesos - Plantillas.
+            </summary>
+        </member>
+        <member name="P:ServDocumentos.Core.Mensajes.MensajesServicios.Version">
+            <summary>
+              Looks up a localized string similar to 1.24.1.
+            </summary>
+        </member>
+    </members>
+</doc>

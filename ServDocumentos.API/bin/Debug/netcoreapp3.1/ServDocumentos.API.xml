@@ -1,0 +1,847 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ServDocumentos.API</name>
+    </assembly>
+    <members>
+        <member name="M:ServDocumentos.API.Controllers.CamposController.Agrega(ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoInsDto)">
+            <summary>
+            Agrega un Campo 
+            </summary>
+            <param name="Campo AgregaAgrega"> </param>
+            <returns></returns>
+            <response code="200">Agrega un Campo</response>
+            <response code="409">Muestra los datos del error que impiden agregar un campo</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.CamposController.Elimina(ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoNombreDto)">
+            <summary>
+            Elimina un Campo por su Nombre
+            </summary>
+            <param name="Campo EliminaElimina"> Nombre del Campo </param>
+            <returns>true</returns>
+            <response code="200">Elimina un Campo</response>
+            <response code="409">Muestra los datos del error que impiden eliminar un campo</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.CamposController.EliminaxId(ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoIdDto)">
+            <summary>
+            Elimina un Campo por su Id
+            </summary>
+            <param name="Campo EliminaxIdEliminaxId"> Id del Campo </param>
+            <returns>true</returns>
+            <response code="200">Elimina un Campo</response>
+            <response code="409">Muestra los datos del error que impiden eliminar un campo</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.CamposController.Obtiene(ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoGetDto)">
+            <summary>
+            Servicio mediante el cual se obtiene la lista de los Campos
+            </summary>
+            <param name="Campo ObtieneObtiene"> </param>
+            <returns></returns>
+            <response code="200">Obtine la lista de los Campo</response>
+            <response code="409">Muestra los datos del error que impiden obtneer los campos</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.CamposController.Modifica(ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoUpdDto)">
+            <summary>
+            Servicio mediante el cual se modifica un Campo
+            </summary>
+            <param name="Campo ModificaModifica"> </param>
+            <returns>Si / No</returns>
+            <response code="200">Modifica los datos de un proceso</response>
+            <response code="409">Muestra los datos del error que impiden modificar un campo</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.CamposTiposController.Agrega(ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoTipoInsDto)">
+            <summary>
+            Agrega un Tipo de Campo
+            </summary>
+            <param name="campotipo AgregaAgrega"> </param>
+            <returns></returns>
+            <response code="200">Agrega un Tipo de Campo</response>
+            <response code="409">Muestra los datos del error que impiden agregar un campo</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.CamposTiposController.Modifica(ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoTipoUpdDto)">
+            <summary>
+            Modifica un Tipo de Campo 
+            </summary>
+            <param name="campotipo ModificaModifica"> </param>
+            <returns></returns>
+            <response code="200">Modifica un Tipo de Campo</response>
+            <response code="409">Muestra los datos del error que impiden agregar un campo</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.CamposTiposController.Obtiene(ServDocumentos.Core.Dtos.Comun.Solicitudes.CampoTipoGetDto)">
+            <summary>
+            Obtiene los Tipos de Campos 
+            </summary>
+            <param name="campotipo buscarbuscar"> </param>
+            <returns></returns>
+            <response code="200">Busqueda de Tipos de Campo</response>
+            <response code="409">Muestra los datos del error que impiden agregar un campo</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.ClasificacionesController.Agrega(ServDocumentos.Core.Dtos.Comun.Solicitudes.ClasificacionInsDto)">
+            <summary>
+            Agrega una Clasificacion
+            </summary>
+            <param name="Clasificaciones AgregaAgrega"> </param>
+            <returns></returns>
+            <response code="200">Agrega un Clasificaciones</response>
+            <response code="409">Muestra los datos del error que impiden agregar un Clasificaciones</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.ClasificacionesController.Elimina(ServDocumentos.Core.Dtos.Comun.Solicitudes.ClasificacionNombreDto)">
+            <summary>
+            Elimina un Clasificaciones por su Nombre
+            </summary>
+            <param name="Clasificaciones EliminaElimina"> Nombre del Clasificaciones </param>
+            <returns>true</returns>
+            <response code="200">Elimina un Clasificaciones</response>
+            <response code="409">Muestra los datos del error que impiden eliminar un Clasificaciones</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.ClasificacionesController.EliminaxId(ServDocumentos.Core.Dtos.Comun.Solicitudes.ClasificacionIdDto)">
+            <summary>
+            Elimina un Clasificaciones por su Id
+            </summary>
+            <param name="Clasificaciones EliminaxIdEliminaxId"> Id del Clasificaciones </param>
+            <returns>true</returns>
+            <response code="200">Elimina un Clasificaciones</response>
+            <response code="409">Muestra los datos del error que impiden eliminar un Clasificaciones</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.ClasificacionesController.Obtiene(ServDocumentos.Core.Dtos.Comun.Solicitudes.ClasificacionGetDto)">
+            <summary>
+            Servicio mediante el cual se obtiene la lista de los Clasificacioness
+            </summary>
+            <param name="Clasificaciones ObtieneObtiene"> </param>
+            <returns></returns>
+            <response code="200">Obtine la lista de los Clasificaciones</response>
+            <response code="409">Muestra los datos del error que impiden obtneer los Clasificaciones</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.ClasificacionesController.Modifica(ServDocumentos.Core.Dtos.Comun.Solicitudes.ClasificacionUpdDto)">
+            <summary>
+            Servicio mediante el cual se modifica un Clasificaciones
+            </summary>
+            <param name="Clasificaciones ModificaModifica"> </param>
+            <returns>Si / No</returns>
+            <response code="200">Modifica los datos de un Clasificaciones</response>
+            <response code="409">Muestra los datos del error que impiden modificar un Clasificaciones</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.DatosController.ObtenerDatos(ServDocumentos.Core.Dtos.Comun.Solicitudes.ObtenerDatosDto)">
+            <summary>
+            Servicio mediante el cual se obtienen los datos del cliente
+            </summary>
+            <param name="solicitud"> item en formato Json con datos de la solicitud</param>
+            <returns></returns>
+            <response code="200">Muestra los datos del cliente</response>
+            <response code="409">Muestra los datos del error que impiden procesar la solicitud </response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.DatosController.ResetearDatos(ServDocumentos.Core.Dtos.Comun.Solicitudes.SolicitudBaseDto)">
+            <summary>
+            Servicio que elimina los datos guardados de la documentación de un crédito previamente solicitado
+            </summary>
+            <param name="solicitud">item en formato Json con los datos para resetear la solicitud</param>
+            <returns></returns>
+            <response code="200">OK</response>
+            <response code="409">Muestra los datos del error que impiden procesar la solicitud </response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.DatosController.MigrarDatosJsonBase64(ServDocumentos.Core.Dtos.Comun.Solicitudes.LoginDto)">
+            <summary>
+            Migra todos los documentos con un id del alfresco a la DB con base64
+            </summary>
+            <param name="solicitud">Item en formato Json con los datos para realizar a la migracion</param>
+            <returns>Entero con la cantidad total de registros modificados</returns>
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.DocumentosController.ObtenerDocumentos(ServDocumentos.Core.Dtos.Comun.Solicitudes.SolictudDocumentoDto)">
+            <summary>
+            Servicio mediante el cual se obtienen los documentos legales de un crédito en formato PDF o ZIP
+            </summary>
+            <param name="solicitud"></param>
+            <returns></returns>
+            <response code="200">Muestra los datos de los documentos generadors</response>
+            <response code="409">Muestra los datos del error que impiden procesar la solicitud </response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.DocumentosController.ObtenerRutaDocumentos(ServDocumentos.Core.Dtos.Comun.Solicitudes.SolictudDocumentoDto)">
+            <summary>
+            Servicio mediante el cual se obtienen la url para consultar los Documentos
+            </summary>
+            <param name="solicitud"></param>
+            <returns></returns>
+            <response code="200">Muestra los datos de los documentos generadors</response>
+            <response code="409">Muestra los datos del error que impiden procesar la solicitud </response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.DocumentosController.ObtenerEstadoCuenta(ServDocumentos.Core.Dtos.Comun.Solicitudes.ObtenerPlantillasProcesoDto)">
+            <summary>
+            Servicio mediante el cual se obtienen el Estado de Cuenta
+            </summary>
+            <param name="solicitud"></param>
+            <returns></returns>
+            <response code="200">Muestra los datos de los documentos generadors</response>
+            <response code="409">Muestra los datos del error que impiden procesar la solicitud </response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.DocumentosController.EstadosCuentaMensualProcesa(ServDocumentos.Core.Dtos.Comun.Solicitudes.EstadosCuentaMensualProcSol)">
+            <summary>
+            Proceso Mensual para la seleccion de los creditos a crear estado de cuenta.
+            </summary>
+            <param name="solicitud"></param>
+            <returns></returns>
+            <response code="200">Muestra los datos de los documentos generadors</response>
+            <response code="409">Muestra los datos del error que impiden procesar la solicitud </response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.DocumentosController.EstadosCuentaMensualObtiene(ServDocumentos.Core.Dtos.Comun.Solicitudes.EstadosCuentaMensualProcSol)">
+            <summary>
+            Obtiene la lista de los creditos para la creacion de su estado de cuenta.
+            </summary>
+            <param name="solicitud"></param>
+            <returns></returns>
+            <response code="200">Muestra los datos de los documentos generadors</response>
+            <response code="409">Muestra los datos del error que impiden procesar la solicitud </response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.DocumentosController.EstadoCuentaMensualGenera(ServDocumentos.Core.Dtos.Comun.Solicitudes.EstadoCuentaMensualSol)">
+            <summary>
+            Servicio mediante el cual se obtienen el Estado de Cuenta Mensual de los creditos activos
+            </summary>
+            <param name="solicitud"></param>
+            <returns></returns>
+            <response code="200">Muestra los datos de los documentos generadors</response>
+            <response code="409">Muestra los datos del error que impiden procesar la solicitud </response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.DocumentosController.EstadoCuentaMensualEnivarCorreo(ServDocumentos.Core.Dtos.Comun.Solicitudes.EstadoCuentaMensualSol)">
+            <summary>
+            Servicio mediante el cual se obtienen el Estado de Cuenta Mensual de los creditos activos
+            </summary>
+            <param name="solicitud"></param>
+            <returns></returns>
+            <response code="200">Muestra los datos de los documentos generadors</response>
+            <response code="409">Muestra los datos del error que impiden procesar la solicitud </response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.DocumentosController.EstadoCuentaCredito(ServDocumentos.Core.Dtos.Comun.Solicitudes.EstadoCuentaCreditoSolDto)">
+            <summary>
+            Servicio mediante el cual se obtienen el estado de cuenta para productos digitales de crédito individual y grupal.
+            </summary>
+            <param name="solicitud"></param>
+            <returns></returns>
+            <response code="200">Muestra los datos del documento generado.</response>
+            <response code="409">Muestra los datos del error que impiden procesar la solicitud.</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción.</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.DocumentosController.ObtenerRutaDocumentosJson(ServDocumentos.Core.Dtos.Comun.Solicitudes.SolictudDocumentoJsonDto)">
+            <summary>
+            Servicio mediante el cual se obtienen una Url para consultar el Documento creado con base un Json
+            </summary>
+            <param name="solicitud"></param>
+            <returns></returns>
+            <response code="200">Muestra los datos de los documentos generadors</response>
+            <response code="409">Muestra los datos del error que impiden procesar la solicitud </response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.DocumentosController.ObtenerDocumentosJson(ServDocumentos.Core.Dtos.Comun.Solicitudes.SolictudDocumentoJsonDto)">
+            <summary>
+            Servicio mediante el cual se obtienen los documentos legales de un crédito creado con base un Json en formato PDF o ZIP
+            </summary>
+            <param name="solicitud"></param>
+            <returns></returns>
+            <response code="200">Muestra los datos de los documentos generadors</response>
+            <response code="409">Muestra los datos del error que impiden procesar la solicitud </response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.DocumentosController.ObtenerDocumentosVistaPrevia(ServDocumentos.Core.Dtos.Comun.Solicitudes.SolictudVistaPreviaDto)">
+            <summary>
+            Servicio mediante el cual se obtienen los documentos legales de un crédito con valores Ejemplo
+            </summary>
+            <param name="solicitud"></param>
+            <returns></returns>
+            <response code="200">Muestra los datos de los documentos generadors</response>
+            <response code="409">Muestra los datos del error que impiden procesar la solicitud </response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.DocumentosController.ObtenerReciboPago(ServDocumentos.Core.Dtos.Comun.Solicitudes.SolicitudDocumentoReciboJson)">
+            <summary>
+            Servicio mediante el cual se obtienen los documentos del recibo de pago
+            </summary>
+            <param name="solicitud"></param>
+            <returns></returns>
+            <response code="200">Muestra los datos de los documentos generadors</response>
+            <response code="409">Muestra los datos del error que impiden procesar la solicitud </response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.DocumentosController.ObtenerDatosPlantillaAhorroJsonSinDatos(ServDocumentos.Core.Dtos.Comun.Solicitudes.SolictudDocumentoJsonDatosDto)">
+            <summary>
+            Servicio mediante el cual se obtienen los documentos legales
+            </summary>
+            <param name="solicitud"></param>
+            <returns></returns>
+            <response code="200">Muestra los datos de los documentos generadors</response>
+            <response code="409">Muestra los datos del error que impiden procesar la solicitud </response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.GeneralesController.Agrega(ServDocumentos.Core.Dtos.Comun.Solicitudes.GeneralesInsDto)">
+            <summary>
+            Agrega un Generales 
+            </summary>
+            <param name="Generales AgregaAgrega"> </param>
+            <returns></returns>
+            <response code="200">Agrega un Generales</response>
+            <response code="409">Muestra los datos del error que impiden agregar un Generales</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.GeneralesController.Elimina(ServDocumentos.Core.Dtos.Comun.Solicitudes.GeneralesNombreDto)">
+            <summary>
+            Elimina un Generales por su Nombre
+            </summary>
+            <param name="Generales EliminaElimina"> Nombre del Generales </param>
+            <returns>true</returns>
+            <response code="200">Elimina un Generales</response>
+            <response code="409">Muestra los datos del error que impiden eliminar un Generales</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.GeneralesController.EliminaxId(ServDocumentos.Core.Dtos.Comun.Solicitudes.GeneralesIdDto)">
+            <summary>
+            Elimina un Generales por su Id
+            </summary>
+            <param name="Generales EliminaxIdEliminaxId"> Id del Generales </param>
+            <returns>true</returns>
+            <response code="200">Elimina un Generales</response>
+            <response code="409">Muestra los datos del error que impiden eliminar un Generales</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.GeneralesController.Obtiene(ServDocumentos.Core.Dtos.Comun.Solicitudes.GeneralesGetDto)">
+            <summary>
+            Servicio mediante el cual se obtiene la lista de los Generaless
+            </summary>
+            <param name="Generales ObtieneObtiene"> </param>
+            <returns></returns>
+            <response code="200">Obtine la lista de los Generales</response>
+            <response code="409">Muestra los datos del error que impiden obtneer los Generales</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.GeneralesController.Modifica(ServDocumentos.Core.Dtos.Comun.Solicitudes.GeneralesUpdDto)">
+            <summary>
+            Servicio mediante el cual se modifica un Generales
+            </summary>
+            <param name="Generales ModificaModifica"> </param>
+            <returns>Si / No</returns>
+            <response code="200">Modifica los datos de un Generales</response>
+            <response code="409">Muestra los datos del error que impiden modificar un Generales</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.PlantillasCamposController.Agrega(ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaCampoInsDto)">
+            <summary>
+            Agrega un Plantillas Campos 
+            </summary>
+            <param name="PlantillasCampos AgregaAgrega"> </param>
+            <returns></returns>
+            <response code="200">Agrega un PlantillasCampos</response>
+            <response code="409">Muestra los datos del error que impiden agregar plantillas campos</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.PlantillasCamposController.Elimina(ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaCampoIdDto)">
+            <summary>
+            Elimina un PlantillasCampos por su id
+            </summary>
+            <param name="PlantillasCampos EliminaElimina"> </param>
+            <returns>true</returns>
+            <response code="200">Elimina</response>
+            <response code="409">Muestra los datos del error que impiden eliminar plantillas campos</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.PlantillasCamposController.EliminaxPlantilla(ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaIdDto)">
+            <summary>
+            Elimina los campos por el id de la plantilla 
+            </summary>
+            <param name="PlantillasCampos EliminaxPlantillaEliminaxPlantilla"> Id del PlantillasCampos </param>
+            <returns>true</returns>
+            <response code="200">Elimina un PlantillasCampos</response>
+            <response code="409">Muestra los datos del error que impiden eliminar plantillas campos</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.PlantillasCamposController.EliminaxCampo(ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaCampoIdcDto)">
+            <summary>
+            Elimina un PlantillasCampos por su Id
+            </summary>
+            <param name="PlantillasCampos EliminaxIdEliminaxId"> Id del PlantillasCampos </param>
+            <returns>true</returns>
+            <response code="200">Elimina un PlantillasCampos</response>
+            <response code="409">Muestra los datos del error que impiden eliminar plantillas campos</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.PlantillasCamposController.Obtiene(ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaCampoGetDto)">
+            <summary>
+            Servicio mediante el cual se obtiene la lista de los PlantillasCamposs
+            </summary>
+            <param name="PlantillasCampos ObtieneObtiene"> </param>
+            <returns></returns>
+            <response code="200">Obtine la lista de los PlantillasCampos</response>
+            <response code="409">Muestra los datos del error que impiden obtneer plantillas campos</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.PlantillasCamposController.Modifica(ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaCampoUpdDto)">
+            <summary>
+            Servicio mediante el cual se modifica un PlantillasCampos
+            </summary>
+            <param name="PlantillasCampos ModificaModifica"> </param>
+            <returns>Si / No</returns>
+            <response code="200">Modifica los datos de un proceso</response>
+            <response code="409">Muestra los datos del error que impiden modificar plantillas campos</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.PlantillasCamposController.ObtienexProceso(ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaCampoPSGet)">
+            <summary>
+            Servicio mediante el cual se obtiene la lista de los PlantillasCamposs por el Proces0 Subproceso
+            </summary>
+            <param name="PlantillasCampos ObtieneObtiene"> </param>
+            <returns></returns>
+            <response code="200">Obtine la lista de los PlantillasCampos</response>
+            <response code="409">Muestra los datos del error que impiden obtneer plantillas campos</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.PlantillasController.ObtenerPlantillasPorProceso(ServDocumentos.Core.Dtos.Comun.Solicitudes.ObtenerPlantillasProcesoDto)">
+            <summary>
+            Servicio mediante el cual se obtiene las plantillas de un crédito
+            </summary>
+            <param name="plantillasProceso"> item en formato Json con datos de la solicitud</param>
+            <returns></returns>
+            <response code="200">Muestra lista de plantillas utilizadas </response>
+            <response code="409">Muestra los datos del error que impiden obtnener las plantillas</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.PlantillasController.ObtenerListadoPlantillasPorProceso(ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoSubDto)">
+            <summary>
+            Servicio mediante el cual se obtiene las plantillas de un crédito
+            </summary>
+            <param name="listadoPlantillasProceso"> item en formato Json con datos de la solicitud</param>
+            <returns></returns>
+            <response code="200">Muestra lista de plantillas utilizadas </response>
+            <response code="409">Muestra los datos del error que impiden obtener el listado de plamtillas</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.PlantillasController.Agrega(ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaInsDto)">
+            <summary>
+            Agrega un Plantilla 
+            </summary>
+            <param name="Plantilla AgregaAgrega"> </param>
+            <returns></returns>
+            <response code="200">Agrega un Plantilla</response>
+            <response code="409">Muestra los datos del error que impiden agregar un Plantilla</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.PlantillasController.Elimina(ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaIdDto)">
+            <summary>
+            Elimina una Plantilla por su id
+            </summary>
+            <param name="Plantilla EliminaElimina"> Nombre de la Plantilla </param>
+            <returns>true</returns>
+            <response code="200">Elimina una plantilla</response>
+            <response code="409">Muestra los datos del error que impiden eliminar una plantilla</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.PlantillasController.EliminaxNombre(ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaNombreDto)">
+            <summary>
+            Elimina una plantilla por su Nombre
+            </summary>
+            <param name="plantilla EliminaElimina"> Id del plantilla </param>
+            <returns>true</returns>
+            <response code="200">Elimina una plantilla</response>
+            <response code="409">Muestra los datos del error que impiden eliminar una plantilla</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.PlantillasController.Obtiene(ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaGetDto)">
+            <summary>
+            Servicio mediante el cual se obtiene la lista de las plantilla
+            </summary>
+            <param name="plantilla ObtieneObtiene"> </param>
+            <returns></returns>
+            <response code="200">Obtine la lista de las plantilla</response>
+            <response code="409">Muestra los datos del error que impiden obtener plantillas</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.PlantillasController.Modifica(ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaUpdDto)">
+            <summary>
+            Servicio mediante el cual se modifica una plantilla
+            </summary>
+            <param name="plantilla ModificaModifica"> </param>
+            <returns>Si / No</returns>
+            <response code="200">Modifica los datos de una plantilla</response>
+            <response code="409">Muestra los datos del error que impiden modificar una plantilla</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.PlantillasController.Registra(ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaRegDto)">
+            <summary>
+            Agrega un Plantilla sin Archivo
+            </summary>
+            <param name="Plantilla RegistraRegistra"> </param>
+            <returns></returns>
+            <response code="200">Agrega un Plantilla</response>
+            <response code="409">Muestra los datos del error que impiden agregar una Plantilla</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.PlantillasController.DescargarPlantillaporId(System.Int32)">
+            <summary>
+            Regresa plantilla por Id
+            </summary>
+            <param name="plantillaId"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.PlantillasController.DescargarPlantillaporNombre(System.String)">
+            <summary>
+            Regresa plantilla por Nombre
+            </summary>
+            <param name="plantillaNombre"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.PlantillasController.MigrarPlantillasBase64(ServDocumentos.Core.Dtos.Comun.Solicitudes.LoginDto)">
+            <summary>
+            Migra todos los documentos con un id del alfresco a la DB con base64
+            </summary>
+            <param name="solicitud">Item en formato Json con los datos para realizar a la migracion</param>
+            <returns>Entero con la cantidad total de registros modificados</returns>
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.PlantillaTipoSubProcesoController.Agrega(ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaTipoSubProcesoInsDto)">
+            <summary>
+            Agrega PlantillaTipoSubProceso
+            </summary>
+            <param name="campotipo AgregaAgrega"> </param>
+            <returns></returns>
+            <response code="200">Agrego PlantillaTipoSubProceso</response>
+            <response code="409">Muestra los datos del error que impiden agregar un PlantillaTipoSubProceso</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.PlantillaTipoSubProcesoController.Modificar(ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaTipoSubProcesoUpdDto)">
+            <summary>
+            Modifica PlantillaTipoSubProceso
+            </summary>
+            <param name="campotipo ModificaModifica"> </param>
+            <returns></returns>
+            <response code="200">Modifico PlantillaTipoSubProceso</response>
+            <response code="409">Muestra los datos del error que impiden modificar PlantillaTipoSubProceso</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.PlantillaTipoSubProcesoController.Obtiene(ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaTipoSubProcesoGetDto)">
+            <summary>
+            Obtiene PlantillaTipoSubProceso 
+            </summary>
+            <param name="campotipo ObtenerObtener"> </param>
+            <returns></returns>
+            <response code="200">Busqueda de PlantillaTipoSubProceso</response>
+            <response code="409">Muestra los datos del error que impiden Obtener un PlantillaTipoSubProceso</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.PlantillaTipoSubProcesoController.Eliminar(ServDocumentos.Core.Dtos.Comun.Solicitudes.PlantillaTipoSubProcesoDelDto)">
+            <summary>
+            Elimina PlantillaTipoSubProceso
+            </summary>
+            <param name="campotipo EliminarEliminar"> </param>
+            <returns></returns>
+            <response code="200">Elimino PlantillaTipoSubProceso</response>
+            <response code="409">Muestra los datos del error que impiden eliminar PlantillaTipoSubProceso</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.ProcesosCamposController.Agrega(ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoCampoInsDto)">
+            <summary>
+            Agrega un ProcesosCampos 
+            </summary>
+            <param name="ProcesosCampos AgregaAgrega"> </param>
+            <returns></returns>
+            <response code="200">Agrega un ProcesosCampos</response>
+            <response code="409">Muestra los datos del error que impiden agregar un ProcesosCampos</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.ProcesosCamposController.EliminaxIds(ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoCampoDelDto)">
+            <summary>
+            Elimina un ProcesosCampos por su Nombre
+            </summary>
+            <param name="ProcesosCampos EliminaElimina"> Nombre del ProcesosCampos </param>
+            <returns>true</returns>
+            <response code="200">Elimina un ProcesosCampos</response>
+            <response code="409">Muestra los datos del error que impiden eliminar un ProcesosCampos</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.ProcesosCamposController.Elimina(ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoCampoIdDto)">
+            <summary>
+            Elimina un ProcesosCampos por su Id
+            </summary>
+            <param name="ProcesosCampos EliminaxIdEliminaxId"> Id del ProcesosCampos </param>
+            <returns>true</returns>
+            <response code="200">Elimina un ProcesosCampos</response>
+            <response code="409">Muestra los datos del error que impiden eliminar un ProcesosCampos</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.ProcesosCamposController.Obtiene(ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoCampoGetDto)">
+            <summary>
+            Servicio mediante el cual se obtiene la lista de los ProcesosCamposs
+            </summary>
+            <param name="ProcesosCampos ObtieneObtiene"> </param>
+            <returns></returns>
+            <response code="200">Obtine la lista de los ProcesosCampos</response>
+            <response code="409">Muestra los datos del error que impiden obtneer los ProcesosCampos</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.ProcesosCamposController.Modifica(ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoCampoUpdDto)">
+            <summary>
+            Servicio mediante el cual se modifica un ProcesosCampos
+            </summary>
+            <param name="ProcesosCampos ModificaModifica"> </param>
+            <returns>Si / No</returns>
+            <response code="200">Modifica los datos de un ProcesosCampos</response>
+            <response code="409">Muestra los datos del error que impiden modificar un ProcesosCampos</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.ProcesosController.Agrega(ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoDto)">
+            <summary>
+            Agrega un proceso 
+            </summary>
+            <param name="Proceso AgregaAgrega"> </param>
+            <returns></returns>
+            <response code="200">Agrega un proceso</response>
+            <response code="409">Muestra los datos del error que impiden agregar un proceso</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.ProcesosController.Elimina(ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoNombreDto)">
+            <summary>
+            Elimina un Proceso por su Nombre
+            </summary>
+            <param name="Proceso EliminaElimina"> Nombre del Proceso </param>
+            <returns>true</returns>
+            <response code="200">Elimina un proceso</response>
+            <response code="409">Muestra los datos del error que impiden eliminar un proceso</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.ProcesosController.EliminaxId(ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoIdDto)">
+            <summary>
+            Elimina un Proceso por su Id
+            </summary>
+            <param name="Proceso EliminaxIdEliminaxId"> Id del Proceso </param>
+            <returns>true</returns>
+            <response code="200">Elimina un proceso</response>
+            <response code="409">Muestra los datos del error que impiden eliminar un proceso</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.ProcesosController.Obtiene">
+            <summary>
+            Servicio mediante el cual se obtiene la lista de los Procesos
+            </summary>
+            <param name="Proceso ObtieneObtiene"> </param>
+            <returns></returns>
+            <response code="200">Obtine la lista de los proceso</response>
+            <response code="409">Muestra los datos del error que impiden obtneer los proceso</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.ProcesosController.Modifica(ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoUpdDto)">
+            <summary>
+            Servicio mediante el cual se modifica un Proceso
+            </summary>
+            <param name="Proceso ModificaModifica"> </param>
+            <returns>Si / No</returns>
+            <response code="200">Modifica los datos de un proceso</response>
+            <response code="409">Muestra los datos del error que impiden modificar un proceso</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:ServDocumentos.API.Controllers.ProcesosController.Obtener(ServDocumentos.Core.Dtos.Comun.Solicitudes.ProcesoGetDto)" -->
+        <member name="M:ServDocumentos.API.Controllers.SubProcesosCamposController.Agrega(ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoCampoInsDto)">
+            <summary>
+            Agrega un SubProcesosCampos 
+            </summary>
+            <param name="SubProcesosCampos AgregaAgrega"> </param>
+            <returns></returns>
+            <response code="200">Agrega un SubProcesosCampos</response>
+            <response code="409">Muestra los datos del error que impiden agregar un SubProcesos Campos</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.SubProcesosCamposController.EliminaxIds(ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoCampoDelDto)">
+            <summary>
+            Elimina un SubProcesosCampos por su Nombre
+            </summary>
+            <param name="SubProcesosCampos EliminaElimina"> Nombre del SubProcesosCampos </param>
+            <returns>true</returns>
+            <response code="200">Elimina un SubProcesosCampos</response>
+            <response code="409">Muestra los datos del error que impiden eliminar un SubProcesos Campos</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.SubProcesosCamposController.EliminaxId(ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoCampoIdDto)">
+            <summary>
+            Elimina un SubProcesosCampos por su Id
+            </summary>
+            <param name="SubProcesosCampos EliminaxIdEliminaxId"> Id del SubProcesosCampos </param>
+            <returns>true</returns>
+            <response code="200">Elimina un SubProcesosCampos</response>
+            <response code="409">Muestra los datos del error que impiden eliminar un SubProcesos Campos</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.SubProcesosCamposController.Obtiene(ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoCampoGetDto)">
+            <summary>
+            Servicio mediante el cual se obtiene la lista de los SubProcesosCamposs
+            </summary>
+            <param name="SubProcesosCampos ObtieneObtiene"> </param>
+            <returns></returns>
+            <response code="200">Obtine la lista de los SubProcesosCampos</response>
+            <response code="409">Muestra los datos del error que impiden obtneer los SubProcesos Campos</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.SubProcesosCamposController.Modifica(ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoCampoUpdDto)">
+            <summary>
+            Servicio mediante el cual se modifica un SubProcesosCampos
+            </summary>
+            <param name="SubProcesosCampos ModificaModifica"> </param>
+            <returns>Si / No</returns>
+            <response code="200">Modifica los datos de un SubProcesosCampos</response>
+            <response code="409">Muestra los datos del error que impiden modificar un SubProcesos Campos</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.SubProcesosController.Agrega(ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoDto)">
+            <summary>
+            Agrega un subproceso 
+            </summary>
+            <param name="Subproceso AgregaAgrega"> </param>
+            <returns></returns>
+            <response code="200">Agrega un subproceso</response>
+            <response code="409">Muestra los datos del error que impiden agregar un subproceso</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.SubProcesosController.Elimina(ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoNombreDto)">
+            <summary>
+            Elimina un SubProceso por su Nombre
+            </summary>
+            <param name="Subproceso EliminaElimina"> Nombre del SubProceso </param>
+            <returns>true</returns>
+            <response code="200">Elimina un subproceso</response>
+            <response code="409">Muestra los datos del error que impiden eliminar un subproceso</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.SubProcesosController.EliminaxId(ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoIdDto)">
+            <summary>
+            Elimina un SubProceso por su Id
+            </summary>
+            <param name="Subproceso EliminaxIdEliminaxId"> Id del SubProceso </param>
+            <returns>true</returns>
+            <response code="200">Elimina un subproceso</response>
+            <response code="409">Muestra los datos del error que impiden eliminar un subproceso</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.SubProcesosController.Obtiene(ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoGetDto)">
+            <summary>
+            Servicio mediante el cual se obtiene la lista de los SubProcesos
+            </summary>
+            <param name="Subproceso ObtieneObtiene"> </param>
+            <returns></returns>
+            <response code="200">Obtine la lista de los subproceso</response>
+            <response code="409">Muestra los datos del error que impiden obtneer los subproceso</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.SubProcesosController.Modifica(ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoUpdDto)">
+            <summary>
+            Servicio mediante el cual se modifica un subProceso
+            </summary>
+            <param name="Subproceso ModificaModifica"> </param>
+            <returns>Si / No</returns>
+            <response code="200">Modifica los datos de un proceso</response>
+            <response code="409">Muestra los datos del error que impiden modificar un subproceso</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.SubProcesosController.ObtienexClasificacion(ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoClasDto)">
+            <summary>
+            Servicio mediante el cual se obtiene la lista de los SubProcesos por Clasificacion
+            </summary>
+            <param name="Subproceso x Clasificacion ObtienexClasificacionObtiene"> </param>
+            <returns></returns>
+            <response code="200">Obtine la lista de los subproceso</response>
+            <response code="409">Muestra los datos del error que impiden obtneer los subproceso</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.SubProcesosPlantillasController.Agrega(ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoPlantillaInsDto)">
+            <summary>
+            Agrega Plantillas a un Subproceso
+            </summary>
+            <param name="SubProcesoPlantillas AgregaAgrega"> </param>
+            <returns></returns>
+            <response code="200">Agrega un SubProcesoPlantillas</response>
+            <response code="409">Muestra los datos del error que impiden agregar un proceso plantillas</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.SubProcesosPlantillasController.Elimina(ServDocumentos.Core.Dtos.Comun.Solicitudes.SubprocesoPlantillaDelDto)">
+            <summary>
+            Elimina un SubProcesoPlantillas por Ids
+            </summary>
+            <param name="SubProcesoPlantillas EliminaElimina"> Nombre del SubProcesoPlantillas </param>
+            <returns>true</returns>
+            <response code="200">Elimina un SubProcesoPlantillas</response>
+            <response code="409">Muestra los datos del error que impiden eliminar un proceso plantillas</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.SubProcesosPlantillasController.EliminaxSubprocesoId(ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoIdDto)">
+            <summary>
+            Elimina un SubProcesoPlantillas por su Id
+            </summary>
+            <param name="SubProcesoPlantillas EliminaxSubprocesoIdEliminaxSubprocesoId"> Id del SubProcesoPlantillas </param>
+            <returns>true</returns>
+            <response code="200">Elimina un SubProcesoPlantillas</response>
+            <response code="409">Muestra los datos del error que impiden eliminar un proceso plantillas</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.SubProcesosPlantillasController.Obtiene(ServDocumentos.Core.Dtos.Comun.Solicitudes.SubprocesoPlantillaGetDto)">
+            <summary>
+            Servicio mediante el cual se obtiene la lista de los SubProcesoPlantillass
+            </summary>
+            <param name="SubProcesoPlantillas ObtieneObtiene"> </param>
+            <returns></returns>
+            <response code="200">Obtine la lista de los SubProcesoPlantillas</response>
+            <response code="409">Muestra los datos del error que impiden obtneer los proceso plantillas</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.SubProcesosPlantillasController.Modifica(ServDocumentos.Core.Dtos.Comun.Solicitudes.SubProcesoPlantillaUpdDto)">
+            <summary>
+            Servicio mediante el cual se modifica un SubProcesoPlantillas
+            </summary>
+            <param name="SubProcesoPlantillas ModificaModifica"> </param>
+            <returns>Si / No</returns>
+            <response code="200">Modifica los datos de un proceso</response>
+            <response code="409">Muestra los datos del error que impiden modificar un proceso plantillas</response> 
+            <response code="500">Muestra los datos del error con el codigo de la excepción</response> 
+        </member>
+        <member name="M:ServDocumentos.API.Controllers.TestController.TestSerivciosDocumentos">
+            <summary>
+            Método para validar que los Servicios esten respondiendo
+            </summary>
+            <returns></returns>
+            <response code="200">Los servicios estan funcionando</response>        
+        </member>
+        <member name="T:ServDocumentos.API.Extensores.ConfiguracionExtension">
+            <summary>
+            Extension para <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>
+            </summary>
+        </member>
+        <member name="F:ServDocumentos.API.Extensores.ConfiguracionExtension.NombreCAMEConfiguracion">
+            <summary>
+            Nombre de la configuracion de CAME mambu
+            </summary>
+        </member>
+        <member name="F:ServDocumentos.API.Extensores.ConfiguracionExtension.NombreTCRConfiguracion">
+            <summary>
+            Nombre de la configuracion de TCR mambu
+            </summary>
+        </member>
+        <member name="M:ServDocumentos.API.Extensores.ConfiguracionExtension.AgregarConfiguraciones(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Agregar configuracion de MAMBU
+            </summary>
+            <param name="services">Coleccion de servicios de la applicacion</param>
+            <param name="configuration">Configuraciones</param>
+            <returns>Coleccion de servicio</returns>
+        </member>
+    </members>
+</doc>

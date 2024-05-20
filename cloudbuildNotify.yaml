@@ -1,0 +1,6 @@
+steps:
+- name: 'bash'
+  script: |
+    #!/usr/bin/env bash
+    echo "Trigger Notify"
+  id: Notify

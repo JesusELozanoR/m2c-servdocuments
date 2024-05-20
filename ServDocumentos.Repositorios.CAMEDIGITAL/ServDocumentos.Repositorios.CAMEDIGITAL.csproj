@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AdoNetCore.AseClient" Version="0.18.0" />
+    <PackageReference Include="Dapper" Version="2.0.123" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ServDocumentos.Core\ServDocumentos.Core.csproj" />
+    <ProjectReference Include="..\ServDocumentos.Repositorios.Comun\ServDocumentos.Repositorios.Comun.csproj" />
+  </ItemGroup>
+
+</Project>

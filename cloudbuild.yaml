@@ -1,0 +1,65 @@
+steps:
+
+
+- name: gcr.io/cloud-builders/gcloud
+  entrypoint: "bash"
+  args:
+    - "-c"
+    - |
+        curl -i 35.208.216.43
+  id: curl_instance_GCP
+
+
+- name: gcr.io/cloud-builders/gcloud
+  entrypoint: "bash"
+  args:
+    - "-c"
+    - |
+        curl -i 10.0.6.37
+
+
+- name: gcr.io/cloud-builders/gcloud
+  entrypoint: "bash"
+  args:
+    - "-c"
+    - |
+        curl -i http://10.10.200.2/TcsNugetServer/nuget
+  id: curl_nuget_10
+- name: gcr.io/cloud-builders/gcloud
+  entrypoint: "bash"
+  args:
+    - "-c"
+    - |
+        curl --ntlm -u 'TKS\pharevalo:Jiha599*Js*' http://192.168.101.28:8050/Desarrollo/_packaging/DESARROLLO_TEST/nuget/v3/index.json
+  id: curl_nuget_198
+options:
+  pool:
+    name: 'projects/came-devops-qa-421116/locations/us-central1/workerPools/m2c-qa-workpool'
+
+
+
+
+# - name: 'gcr.io/cloud-builders/docker'
+#   args: ['build', '.', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments:${SHORT_SHA}', '-t',
+#           'us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments','-f', 'Dockerfile' ]
+#   id: build
+# # Push the container image to Container Registry
+# - name: 'gcr.io/cloud-builders/docker'
+#   args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments:$SHORT_SHA']
+#   id: push
+# #Deploy container image to Cloud Deploy
+# - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+#   entrypoint: gcloud
+#   args: ['run', 'deploy', 'm2c-qa-servicedeploy-servdocuments-test', 
+#     '--image', 'us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments:$SHORT_SHA', 
+#     '--region', 'us-central1',
+#     '--network', 'm2c-qa-network',
+#     '--subnet', 'm2c-qa-network-app',
+#     '--min-instances', '1',
+#     '--max-instances', '1',
+#     '--cpu', '1',
+#     '--memory', '256Mi',
+#     '--port', '80',
+#     '--allow-unauthenticated']
+# images:
+# - us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments

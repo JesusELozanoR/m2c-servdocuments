@@ -1,0 +1,89 @@
+{
+  "Serilog": {
+    "Using": [
+      "Serilog.Sinks.MSSqlServer",
+      "Serilog.Enrichers.Environment",
+      "Serilog.Filters.Expressions",
+      "Serilog.Exceptions"
+    ],
+    "MinimumLevel": "Information",
+    "Enrich": [ "FromLogContext", "WithMachineName", "WithExceptionDetails" ],
+    "Properties": {
+      "Aplicativo": "ServicioDocumentos"
+    },
+    "Filter": [
+      {
+        "Name": "ByExcluding",
+        "Args": {
+          "expression": "StartsWith(SourceContext,'Microsoft')"
+        }
+      }
+    ],
+    "WriteTo": [
+      {
+        "Name": "MSSqlServer",
+        "Args": {
+          "connectionString": "ConexionComunes",
+          "schemaName": "dbo",
+          "tableName": "logt_LogEstructurado",
+          "autoCreateSqlTable": false,
+          "restrictedToMinimumLevel": "Information",
+          "batchPostingLimit": 1,
+          "period": "0.00:00:30",
+          "columnOptionsSection": {
+            "disableTriggers": true,
+            "clusteredColumnstoreIndex": false,
+            "primaryKeyColumnName": "Id",
+            "addStandardColumns": [ "LogEvent" ],
+            "removeStandardColumns": [ "MessageTemplate", "Properties" ],
+            "customColumns": [
+              {
+                "ColumnName": "Aplicativo",
+                "DataType": "varchar",
+                "AllowNull": true,
+                "DataLength": -1,
+                "NonClusteredIndex": false
+              },
+              {
+                "ColumnName": "CodigoRastreo",
+                "DataType": "varchar",
+                "AllowNull": true,
+                "DataLength": -1,
+                "NonClusteredIndex": false
+              },
+              {
+                "ColumnName": "RequestId",
+                "DataType": "varchar",
+                "AllowNull": true,
+                "DataLength": -1,
+                "NonClusteredIndex": false
+              }
+            ],
+            "id": { "nonClusteredIndex": true },
+            "level": {
+              "columnName": "Severidad",
+              "storeAsEnum": false
+            },
+            "timeStamp": {
+              "columnName": "FechaHoraEventoUTC",
+              "convertToUtc": true
+            },
+            "logEvent": {
+              "columnName": "Propiedades",
+              "excludeAdditionalProperties": true,
+              "excludeStandardColumns": true
+            },
+            "message": { "columnName": "Mensaje" },
+            "exception": { "columnName": "Error" }
+          }
+        }
+      },
+      {
+        "Name": "Debug"
+      },
+      {
+        "Name": "Console"
+      }
+    ]
+  }
+}

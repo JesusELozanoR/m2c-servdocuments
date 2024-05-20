@@ -1,0 +1,24 @@
+{
+  "AlfrescoConexion": {
+    "Host": "http://192.168.6.40:8080",
+    "Ruta": "/alfresco/api/cmis/versions/1.0/atom/",
+    "Usuario": "Desarrollo-1",
+    "Clave": "D3s4rr0ll0#$",
+    "APIUrl": "/alfresco/api/-default-/public/alfresco/versions/1"
+  },
+
+  "Carpetas": {
+    "CarpetaInicial": "Sitios",
+    "Aplicativo": "camedesarrollo/Servicio Documentos"
+  },
+
+  "ArchivoTipos": {
+    "Imagen": "jpg,png,jpeg",
+    "Comprimidos": "zip,rar",
+    "HojaCalculo": "xls,xlsx",
+    "Documento": "txt,doc,docx,pdf",
+    "Presentacion": "pptx",
+    "Videos": "mpeg,avi",
+    "DocsJson": "json"
+  }
+}

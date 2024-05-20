@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="cmn.std.Parametros" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ServDocumentos.Core\ServDocumentos.Core.csproj" />
+    <ProjectReference Include="..\ServDocumentos.Repositorios.CAMEDIGITAL\ServDocumentos.Repositorios.CAMEDIGITAL.csproj" />
+    <ProjectReference Include="..\ServDocumentos.Repositorios.Comun\ServDocumentos.Repositorios.Comun.csproj" />
+  </ItemGroup>
+
+</Project>
