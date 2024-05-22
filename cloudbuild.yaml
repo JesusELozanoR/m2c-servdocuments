@@ -17,7 +17,6 @@ steps:
     - |
         curl -i 10.0.6.37
 
-
 - name: gcr.io/cloud-builders/gcloud
   entrypoint: "bash"
   args:
