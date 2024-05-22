@@ -39,8 +39,8 @@ steps:
   id: curl_nuget_198
 options:
   pool:
-#     name: 'projects/came-devops-qa-421116/locations/us-central1/workerPools/m2c-qa-workpool'
-
+    name: 'projects/came-devops-qa-421116/locations/us-central1/workerPools/m2c-qa-workpool'
+    logging: CLOUD_LOGGING_ONLY
 
 
 # - name: 'gcr.io/cloud-builders/docker'
