@@ -17,12 +17,11 @@ steps:
 #     - |
 #         curl -i 10.0.6.37
 
-- name: gcr.io/cloud-builders/gcloud
-  entrypoint: "bash"
-  args:
-    - "-c"
-    - |
-        ip a
+- name: 'bash'
+  script: |
+    #!/usr/bin/env bash
+    ifconfig 
+  id: ifconfig
 
 - name: gcr.io/cloud-builders/gcloud
   entrypoint: "bash"
