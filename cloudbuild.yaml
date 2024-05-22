@@ -21,7 +21,7 @@ steps:
   script: |
     #!/usr/bin/env bash
     ifconfig 
-  id: ifconfig
+  id: Show IP
 
 - name: gcr.io/cloud-builders/gcloud
   entrypoint: "bash"
