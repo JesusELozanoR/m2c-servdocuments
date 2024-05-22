@@ -40,7 +40,7 @@ steps:
 options:
   pool:
     name: 'projects/came-devops-qa-421116/locations/us-central1/workerPools/m2c-qa-private-pool'
-
+    logging: NONE
 
 # - name: 'gcr.io/cloud-builders/docker'
 #   args: ['build', '.', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments:${SHORT_SHA}', '-t',
