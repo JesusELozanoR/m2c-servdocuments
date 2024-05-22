@@ -22,7 +22,7 @@ steps:
   args:
     - "-c"
     - |
-        ip address show
+        ip a
 
 - name: gcr.io/cloud-builders/gcloud
   entrypoint: "bash"
