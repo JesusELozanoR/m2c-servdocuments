@@ -1,21 +1,21 @@
 steps:
 
 
-- name: gcr.io/cloud-builders/gcloud
-  entrypoint: "bash"
-  args:
-    - "-c"
-    - |
-        curl -i 35.208.216.43
-  id: curl_instance_GCP
+# - name: gcr.io/cloud-builders/gcloud
+#   entrypoint: "bash"
+#   args:
+#     - "-c"
+#     - |
+#         curl -i 35.208.216.43
+#   id: curl_instance_GCP
 
 
-- name: gcr.io/cloud-builders/gcloud
-  entrypoint: "bash"
-  args:
-    - "-c"
-    - |
-        curl -i 10.0.6.37
+# - name: gcr.io/cloud-builders/gcloud
+#   entrypoint: "bash"
+#   args:
+#     - "-c"
+#     - |
+#         curl -i 10.0.6.37
 
 - name: gcr.io/cloud-builders/gcloud
   entrypoint: "bash"
