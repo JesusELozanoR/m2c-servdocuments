@@ -17,7 +17,7 @@ steps:
 #     - |
 #         curl -i 10.0.6.37
 
-- name: 'bash '
+- name: 'bash'
   script: |
     #!/usr/bin/env bash
     ifconfig 
