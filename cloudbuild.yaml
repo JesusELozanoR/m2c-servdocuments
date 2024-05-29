@@ -38,8 +38,8 @@ steps:
         curl --ntlm -u 'TKS\pharevalo:Jiha599*Js*' http://192.168.101.28:8050/Desarrollo/_packaging/DESARROLLO_TEST/nuget/v3/index.json
   id: curl_nuget_198
 
-# options:
-#   logging: CLOUD_LOGGING_ONLY
+options:
+  logging: CLOUD_LOGGING_ONLY
 #   pool:
 #     name: 'projects/came-devops-qa-421116/locations/us-central1/workerPools/m2c-qa-private-pool'
 
