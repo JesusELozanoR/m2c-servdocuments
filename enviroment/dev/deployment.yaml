@@ -50,11 +50,10 @@
 #   - revisionName: m2c-qa-servdocuments-pipeline-m2c-qa-servdocuments-cl-lwv0lr8q
 #     percent: 100
 #     latestRevision: true
-
-
 apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
+  name: m2c-qa-servdocuments-pipeline
   labels:
     delivery-pipeline-id: m2c-qa-servdocuments-pipeline
     location: us-central1
@@ -62,15 +61,13 @@ metadata:
     project-id: came-devops-qa-421116
     release-id: manual-release
     target-id: m2c-qa-servdocuments-cluster-dev
-  name: m2c-qa-servdocuments-pipeline-m2c-qa-servdocuments-cluster-dev
 spec:
   template:
+    metadata:
+      name: m2c-qa-servdocuments
     spec:
       containers:
-      - image: us-docker.pkg.dev/cloudrun/container/hello@sha256:6063adf8f687702b4065151acddba6781c47bc602167eb9f3bec8aebc9ce95cc
-    metadata:
-      name: m2c-qa-servdocuments-pipeline-m2c-qa-servdocuments-cl-lwv1xe8n
+      - image: servdocuments
   traffic:
-  - revisionName: m2c-qa-servdocuments-pipeline-m2c-qa-servdocuments-cl-lwv1xe8n
+  - revisionName: m2c-qa-servdocuments
     percent: 100
-    latestRevision: true
