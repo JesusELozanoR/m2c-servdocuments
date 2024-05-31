@@ -1,6 +1,13 @@
 apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
+  labels:
+    delivery-pipeline-id: m2c-qa-servdocuments-pipeline
+    location: us-central1
+    managed-by: google-cloud-deploy
+    project-id: came-devops-qa-421116
+    release-id: rel-8043962
+    target-id: m2c-qa-servdocuments-cluster-dev
   name: m2c-qa-servdocuments-pipeline-m2c-qa-servdocuments-cluster-dev
 spec:
   template:
@@ -8,3 +15,8 @@ spec:
       containers:
       - image: servdocuments
         name: servdocuments
+    metadata:
+      name: m2c-qa-servdocuments-pipeline-m2c-qa-servdocuments-cl-lwv0lr8q
+  traffic:
+  - revisionName: m2c-qa-servdocuments-pipeline-m2c-qa-servdocuments-cl-lwv0lr8q
+    percent: 100
