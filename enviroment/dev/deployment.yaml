@@ -15,6 +15,12 @@ spec:
       containers:
       - image: servdocuments
         name: servdocuments
+        resources:
+              limits:
+                memory: "128Mi"
+                cpu: "500m"
+        ports:
+          - containerPort: 80
     metadata:
       name: m2c-qa-servdocuments-pipeline-m2c-qa-servdocuments-cl-lwv0lr8q
   traffic:
