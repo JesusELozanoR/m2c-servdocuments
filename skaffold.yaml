@@ -1,0 +1,13 @@
+apiVersion: skaffold/v3alpha1
+kind: Config
+deploy:
+  kubectl: {}
+profiles:
+- name: m2c-qa-servdocuments-cluster-dev
+  manifests:
+    rawYaml:
+    - enviroment/dev/deployment.yaml
+- name: m2c-qa-servdocuments-cluster-qa
+  manifests:
+    rawYaml:
+    - enviroment/qa/deployment.yaml
