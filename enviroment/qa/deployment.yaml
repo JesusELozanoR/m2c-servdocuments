@@ -6,7 +6,7 @@ metadata:
     location: us-central1
     managed-by: google-cloud-deploy
     project-id: came-devops-qa-421116
-    release-id: rel-8043962
+    release-id: v-0-2
     target-id: m2c-qa-servdocuments-cluster-qa
   name: m2c-qa-servdocuments-pipeline-m2c-qa-servdocuments-cluster-qa
 spec:
@@ -14,13 +14,19 @@ spec:
     spec:
       containers:
       - image: servdocuments
-        name: servdocuments
         resources:
               limits:
                 memory: "128Mi"
                 cpu: "500m"
         ports:
-          - containerPort: 80
+        - name: http1
+          containerPort: 80
+        startupProbe:
+          timeoutSeconds: 240
+          periodSeconds: 240
+          failureThreshold: 1
+          tcpSocket:
+            port: 80
     metadata:
       name: m2c-qa-servdocuments-pipeline-m2c-qa-servdocuments-cl-lwv0lr8q
   traffic:
