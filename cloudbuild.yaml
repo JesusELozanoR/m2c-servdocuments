@@ -9,13 +9,13 @@ steps:
   args: ['info']
   id: Show GCP Info
 
-- name: gcr.io/cloud-builders/gcloud
-  entrypoint: "bash"
-  args:
-    - "-c"
-    - |
-        curl -i http://10.10.200.2/TcsNugetServer/nuget
-  id: curl_nuget_10
+# - name: gcr.io/cloud-builders/gcloud
+#   entrypoint: "bash"
+#   args:
+#     - "-c"
+#     - |
+#         curl -i http://10.10.200.2/TcsNugetServer/nuget
+#   id: curl_nuget_10
 - name: gcr.io/cloud-builders/gcloud
   entrypoint: "bash"
   args:
