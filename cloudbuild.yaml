@@ -5,7 +5,7 @@ steps:
     ifconfig
   id: Show IP Address
 
-- name: 'gcloud'
+- name: gcr.io/cloud-builders/gcloud
   args: ['info', 'instance']
   id: Show GCP Instance
 
