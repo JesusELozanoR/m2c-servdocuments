@@ -8,7 +8,7 @@ steps:
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['info']
   id: Show GCP Info
-  
+
 - name: gcr.io/cloud-builders/gcloud
   entrypoint: "bash"
   args:
@@ -26,4 +26,5 @@ steps:
 options:
   pool:
     name: 'projects/came-devops-qa-421116/locations/us-central1/workerPools/m2c-qa-private-pool'
+  serviceAccount: 'm2c-user-service-build@came-devops-qa-421116.iam.gserviceaccount.com'
 
