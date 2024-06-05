@@ -5,10 +5,10 @@ steps:
     ifconfig
   id: Show IP Address
 
-- name: gcr.io/cloud-builders/gcloud
-  args: ['info', 'instance']
-  id: Show GCP Instance
-
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['info']
+  id: Show GCP Info
+  
 - name: gcr.io/cloud-builders/gcloud
   entrypoint: "bash"
   args:
