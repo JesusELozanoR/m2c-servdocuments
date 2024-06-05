@@ -3,7 +3,9 @@ steps:
   script: |
     #!/usr/bin/env bash
     ifconfig
-  id: Show IP
+  id: Show IP Address
+- name: 'gcloud'
+  args: ['info', 'instance']
 - name: gcr.io/cloud-builders/gcloud
   entrypoint: "bash"
   args:
