@@ -1,73 +1,75 @@
-# apiVersion: serving.knative.dev/v1
-# kind: Service
-# metadata:
-#   labels:
-#     delivery-pipeline-id: m2c-qa-servdocuments-pipeline
-#     location: us-central1
-#     managed-by: google-cloud-deploy
-#     project-id: came-devops-qa-421116
-#     release-id: v-0-2
-#     target-id: m2c-qa-servdocuments-cluster-qa
-#   annotations:
-#     serving.knative.dev/creator: 124562960269-compute@developer.gserviceaccount.com
-#     serving.knative.dev/lastModifier: eduardo.lozano@beyondtech.consulting
-#     run.googleapis.com/client-name: cloud-console
-#     run.googleapis.com/operation-id: 473c9935-72b6-4a55-adc0-6151a953e6e7
-#     run.googleapis.com/ingress: all
-#     run.googleapis.com/ingress-status: all
-#   name: m2c-qa-servdocuments-pipeline-m2c-qa-servdocuments-cluster-qa
-# spec:
-#   template:
-#     spec:
-#       containerConcurrency: 80
-#       containers:
-#       - image: servdocuments
-#         ports:
-#         - name: http1
-#           containerPort: 80
-#         resources:
-#           limits:
-#             cpu: 1000m
-#             memory: 256Mi
-#         startupProbe:
-#           timeoutSeconds: 240
-#           periodSeconds: 240
-#           failureThreshold: 1
-#           tcpSocket:
-#             port: 80
-#     metadata:
-#       labels:
-#         client.knative.dev/nonce: 114a707b-00b9-41ff-8509-ad8b31c0e3ef
-#         run.googleapis.com/startupProbeType: Default
-#       annotations:
-#         autoscaling.knative.dev/maxScale: '2'
-#         run.googleapis.com/client-name: cloud-console
-#         run.googleapis.com/vpc-access-egress: private-ranges-only
-#         run.googleapis.com/network-interfaces: '[{"network":"m2c-qa-network","subnetwork":"m2c-qa-network-app"}]'
-#         autoscaling.knative.dev/minScale: '1'
-#         run.googleapis.com/startup-cpu-boost: 'false'
-#   traffic:
-#   - revisionName: m2c-qa-servdocuments-pipeline-m2c-qa-servdocuments-cl-lwv0lr8q
-#     percent: 100
-#     latestRevision: true
 apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
-  name: m2c-qa-servdocuments-pipeline
   labels:
     delivery-pipeline-id: m2c-qa-servdocuments-pipeline
     location: us-central1
     managed-by: google-cloud-deploy
     project-id: came-devops-qa-421116
-    release-id: manual-release
+    release-id: v-0-2
     target-id: m2c-qa-servdocuments-cluster-qa
+  annotations:
+    serving.knative.dev/creator: 124562960269-compute@developer.gserviceaccount.com
+    serving.knative.dev/lastModifier: eduardo.lozano@beyondtech.consulting
+    run.googleapis.com/client-name: cloud-console
+    run.googleapis.com/operation-id: 473c9935-72b6-4a55-adc0-6151a953e6e7
+    run.googleapis.com/ingress: all
+    run.googleapis.com/ingress-status: all
+  name: m2c-qa-servdocuments-pipeline-m2c-qa-servdocuments-cluster-qa
 spec:
   template:
-    metadata:
-      name: m2c-qa-servdocuments
     spec:
+      containerConcurrency: 80
       containers:
       - image: servdocuments
+        ports:
+        - name: http1
+          containerPort: 80
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 256Mi
+        startupProbe:
+          timeoutSeconds: 240
+          periodSeconds: 240
+          failureThreshold: 1
+          tcpSocket:
+            port: 80
+    metadata:
+      labels:
+        client.knative.dev/nonce: 114a707b-00b9-41ff-8509-ad8b31c0e3ef
+        run.googleapis.com/startupProbeType: Default
+      annotations:
+        autoscaling.knative.dev/maxScale: '2'
+        run.googleapis.com/client-name: cloud-console
+        run.googleapis.com/vpc-access-egress: private-ranges-only
+        run.googleapis.com/network-interfaces: '[{"network":"m2c-qa-network","subnetwork":"m2c-qa-network-app"}]'
+        autoscaling.knative.dev/minScale: '1'
+        run.googleapis.com/startup-cpu-boost: 'false'
   traffic:
-  - revisionName: m2c-qa-servdocuments
+  - revisionName: m2c-qa-servdocuments-pipeline-m2c-qa-servdocuments-cl-lwv0lr8q
     percent: 100
+    latestRevision: true
+
+
+# apiVersion: serving.knative.dev/v1
+# kind: Service
+# metadata:
+#   name: m2c-qa-servdocuments-pipeline
+#   labels:
+#     delivery-pipeline-id: m2c-qa-servdocuments-pipeline
+#     location: us-central1
+#     managed-by: google-cloud-deploy
+#     project-id: came-devops-qa-421116
+#     release-id: manual-release
+#     target-id: m2c-qa-servdocuments-cluster-qa
+# spec:
+#   template:
+#     metadata:
+#       name: m2c-qa-servdocuments
+#     spec:
+#       containers:
+#       - image: servdocuments
+#   traffic:
+#   - revisionName: m2c-qa-servdocuments
+#     percent: 100
