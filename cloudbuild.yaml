@@ -1,5 +1,10 @@
 steps:
-
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    gcloud builds cancel $BUILD_ID
 - name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: 'bash'
   args:
