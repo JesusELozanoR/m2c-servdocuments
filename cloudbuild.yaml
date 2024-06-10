@@ -1,4 +1,16 @@
 steps:
+
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    echo "Esperando aprobación manual..."
+    while [ -z "$(gcloud builds describe $BUILD_ID --format='value(status)')" ]; do
+      sleep 10
+    done
+    echo "Aprobación concedida, continuando con el build..."
+
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '.', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments:${SHORT_SHA}', '-t',
           'us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments','-f', 'Dockerfile' ]
