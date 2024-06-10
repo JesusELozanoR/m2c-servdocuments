@@ -1,13 +1,4 @@
 steps:
-# Paso 3: esperar aprobación manual (simulación)
-  # Paso 3: esperar aprobación manual (simulación)
-- name: 'gcr.io/cloud-builders/gcloud'
-  entrypoint: 'bash'
-  args:
-  - '-c'
-  - |
-    echo "Waiting for approval..."
-    sleep 7200  # Espera de 2 horas
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '.', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments:${SHORT_SHA}', '-t',
           'us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments','-f', 'Dockerfile' ]
@@ -17,6 +8,19 @@ steps:
   args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments:$SHORT_SHA']
   id: push
 #Deploy container image to Cloud Deploy
-# Segundo paso: iniciar otro build
-- name: 'gcr.io/cloud-builders/gcloud'
-  args: ['builds', 'submit', '--config', 'cloudbuild-dos.yaml', '.']
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args: ['run', 'deploy', 'm2c-qa-servicedeploy-servdocuments-test', 
+    '--image', 'us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments:$SHORT_SHA', 
+    '--region', 'us-central1',
+    '--network', 'm2c-qa-network',
+    '--subnet', 'm2c-qa-network-app',
+    '--min-instances', '1',
+    '--max-instances', '1',
+    '--cpu', '1',
+    '--memory', '256Mi',
+    '--port', '80',
+    '--allow-unauthenticated']
+  id: deploy
+images:
+- us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments
