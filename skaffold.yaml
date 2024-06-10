@@ -1,7 +1,7 @@
 apiVersion: skaffold/v3alpha1
 kind: Config
 deploy:
-  kubectl: {}
+  cloudrun: {}
 profiles:
 - name: m2c-qa-servdocuments-cluster-dev
   manifests:
