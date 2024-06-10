@@ -4,6 +4,7 @@ steps:
   args:
   - '-c'
   - |
+    echo "Esperando aprobación manual..." + $BUILD_ID
     gcloud builds cancel $BUILD_ID
 - name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: 'bash'
