@@ -131,7 +131,7 @@ namespace ServDocumentos.API
                 {
                     Version = "v1",
                     Title = "Servicio Documentos" ,
-                    Description = "Servicio Documentos",
+                    Description = "Servicio Documentos CAME",
                     //Contact = new Microsoft.OpenApi.Models.OpenApiContact() { Name = "Talking Dotnet", Email = "contact@talkingdotnet.com" }
                 });
                 c.ExampleFilters();
