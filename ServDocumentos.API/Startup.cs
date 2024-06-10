@@ -130,7 +130,7 @@ namespace ServDocumentos.API
                 c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "Servicio Documentos CAME" ,
+                    Title = "Servicio Documentos CAME CICD" ,
                     Description = "Servicio Documentos",
                     //Contact = new Microsoft.OpenApi.Models.OpenApiContact() { Name = "Talking Dotnet", Email = "contact@talkingdotnet.com" }
                 });
