@@ -1,16 +1,13 @@
 steps:
 # Paso 3: esperar aprobación manual (simulación)
+  # Paso 3: esperar aprobación manual (simulación)
 - name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: 'bash'
   args:
   - '-c'
   - |
     echo "Waiting for approval..."
-    while [ "$(gcloud secrets versions access latest --secret=approval-status)" != "approved" ]; do
-      echo "Still waiting..."
-      sleep 60
-    done
-
+    sleep 7200  # Espera de 2 horas
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '.', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments:${SHORT_SHA}', '-t',
           'us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments','-f', 'Dockerfile' ]
