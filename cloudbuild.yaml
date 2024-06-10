@@ -16,7 +16,7 @@ steps:
     '--network', 'm2c-qa-network',
     '--subnet', 'm2c-qa-network-app',
     '--min-instances', '1',
-    '--max-instances', '1',
+    '--max-instances', '2',
     '--cpu', '1',
     '--memory', '256Mi',
     '--port', '80',
