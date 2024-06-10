@@ -47,7 +47,6 @@ spec:
         autoscaling.knative.dev/minScale: '1'
         run.googleapis.com/startup-cpu-boost: 'false'
   traffic:
-  - revisionName: m2c-qa-servdocuments-pipeline-m2c-qa-servdocuments-cl-lwv0lr8q
     percent: 100
     latestRevision: true
 
