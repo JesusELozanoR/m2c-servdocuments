@@ -20,6 +20,7 @@ steps:
   id: curl_nuget_10
 
 options:
+  logging: CLOUD_LOGGING_ONLY
   pool:
     name: 'projects/came-devops-qa-421116/locations/us-central1/workerPools/m2c-qa-private-group'
 
