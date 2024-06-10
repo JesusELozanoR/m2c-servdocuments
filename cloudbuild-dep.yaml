@@ -7,7 +7,15 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments:$SHORT_SHA']
   id: push
-#Deploy container image to Cloud Deploy
-# Segundo paso: iniciar otro build
-- name: 'gcr.io/cloud-builders/gcloud'
-  args: ['builds', 'submit', '--config', 'cloudbuild-dos.yaml', '.']
+# Deploy container image to Cloud Run
+- name: gcr.io/google.com/cloudsdktool/cloud-sdk
+  entrypoint: gcloud
+  id: deploy
+  args: 
+    [
+      "deploy", "releases", "create", "rel-${SHORT_SHA}",
+      "--delivery-pipeline", "m2c-qa-servdocuments-pipeline",
+      "--region", "us-central1",
+      "--annotations", "commitId=${REVISION_ID}",
+      "--images", "servdocuments=us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments:$SHORT_SHA"
+    ]
