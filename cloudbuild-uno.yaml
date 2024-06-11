@@ -13,4 +13,4 @@ steps:
 # #Deploy container image to Cloud Deploy
 # # Segundo paso: iniciar otro build
 # - name: 'gcr.io/cloud-builders/gcloud'
-#   args: ['builds', 'submit', '--config', 'cloudbuild-dos.yaml', '.']
+#   args: ['builds', 'submit', '--config', 'cloudbuild-dos.yaml', '.'] 
