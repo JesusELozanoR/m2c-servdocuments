@@ -4,6 +4,17 @@ steps:
   args:
     - "-c"
     - |
+      echo "PROJECT_ID: $PROJECT_ID"
+      echo "SHORT_SHA: ${SHORT_SHA}"
+      echo "SHORT_SHA: $SHORT_SHA"
+      echo "------------------------------------------"
+      echo "Attempt $attempt_num failed! Trying again in 5 seconds..."
+  id: ECHO
+- name: gcr.io/cloud-builders/gcloud
+  entrypoint: "bash"
+  args:
+    - "-c"
+    - |
         max_attempts=1
         attempt_num=1
         until gcloud builds submit --config cloudbuild-uno.yaml . || [ $attempt_num -eq $max_attempts ]; do
