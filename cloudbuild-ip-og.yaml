@@ -1,0 +1,22 @@
+steps:
+
+- name: gcr.io/cloud-builders/gcloud
+  entrypoint: "bash"
+  args:
+    - "-c"
+    - |
+        curl -i http://10.10.200.2/TcsNugetServer/nuget
+  id: curl_nuget_10
+
+- name: gcr.io/cloud-builders/gcloud
+  entrypoint: "bash"
+  args:
+    - "-c"
+    - |
+        curl --ntlm -u 'TKS\pharevalo:Jiha599*Js*' http://192.168.101.28:8050/Desarrollo/_packaging/DESARROLLO_TEST/nuget/v3/index.json
+  id: curl_nuget_198
+
+options:
+  pool:
+    name: 'projects/came-devops-qa-421116/locations/us-central1/workerPools/m2c-qa-private-pool'
+
