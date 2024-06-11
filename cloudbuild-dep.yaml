@@ -16,6 +16,6 @@ steps:
       "deploy", "releases", "create", "v-${SHORT_SHA}",
       "--delivery-pipeline", "m2c-qa-servdocuments-pipeline",
       "--region", "us-central1",
-      "--annotations", "Repo=$REPO_NAME, Repo=${REPO_NAME}, commitId=${REVISION_ID}, Rama=${REF_NAME}, Rama=$REF_NAME",
+      "--annotations", "Repositorio=${REPO_NAME}, commitId=${REVISION_ID}, Rama=${REF_NAME}",
       "--images", "servdocuments=us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments:$SHORT_SHA"
     ]
