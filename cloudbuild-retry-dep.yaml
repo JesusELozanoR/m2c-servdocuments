@@ -1,0 +1,21 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '.', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments:latest', '-t',
+          'us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments','-f', 'Dockerfile' ]
+  id: build
+# Push the container image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments:latest']
+  id: push
+# Deploy container image to Cloud Run
+- name: gcr.io/google.com/cloudsdktool/cloud-sdk
+  entrypoint: gcloud
+  id: deploy
+  args: 
+    [
+      "deploy", "releases", "create", "v-latest",
+      "--delivery-pipeline", "m2c-qa-servdocuments-pipeline",
+      "--region", "us-central1",
+      "--annotations", "Repositorio=${REPO_NAME}, commitId=${REVISION_ID}, Rama=${REF_NAME}",
+      "--images", "servdocuments=us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments:latest"
+    ]
