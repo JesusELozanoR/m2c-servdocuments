@@ -5,7 +5,7 @@ steps:
     - "-c"
     - |
         SHORT_SHA=${SHORT_SHA:-"latest"}
-        docker build . -t us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments:${SHORT_SHA} -t us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments -f Dockerfile
+        docker build . -t us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments:${SHORT_SHA} -t -f Dockerfile
   id: build
 # Push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
