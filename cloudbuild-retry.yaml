@@ -1,4 +1,22 @@
 steps:
+# - name: gcr.io/cloud-builders/gcloud
+#   entrypoint: "bash"
+#   args:
+#     - "-c"
+#     - |
+#         max_attempts=2
+#         attempt_num=1
+#         until gcloud builds submit --config cloudbuild-retry-dep.yaml . || [ $attempt_num -eq $max_attempts ]; do
+#           echo "Intento No. $attempt_num fallo! Intentando de nuevo en 5 segundos..."
+#           sleep 5
+#           attempt_num=$((attempt_num + 1))
+#         done
+#         if [ $attempt_num -eq $max_attempts ]; then
+#           echo "Todos los Intentos han sido erroneos!"
+#           exit 1
+#         fi
+#   id: curl_nuget_10_retry
+# options:
 - name: gcr.io/cloud-builders/gcloud
   entrypoint: "bash"
   args:
@@ -6,7 +24,8 @@ steps:
     - |
         max_attempts=2
         attempt_num=1
-        until gcloud builds submit --config cloudbuild-retry-dep.yaml . || [ $attempt_num -eq $max_attempts ]; do
+        echo "$PROJECT_ID + ${SHORT_SHA} + $SHORT_SHA"
+        until docker build . -t us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments:latest -t us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments -f Dockerfile || [ $attempt_num -eq $max_attempts ]; do
           echo "Intento No. $attempt_num fallo! Intentando de nuevo en 5 segundos..."
           sleep 5
           attempt_num=$((attempt_num + 1))
@@ -15,7 +34,12 @@ steps:
           echo "Todos los Intentos han sido erroneos!"
           exit 1
         fi
-  id: curl_nuget_10_retry
+  id: build_retry
+
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments:latest']
+  id: push
+
 options:
   pool:
     name: 'projects/came-devops-qa-421116/locations/us-central1/workerPools/m2c-qa-private-pool'
