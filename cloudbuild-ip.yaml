@@ -24,5 +24,3 @@ steps:
 options:
   pool:
     name: 'projects/came-devops-qa-421116/locations/us-central1/workerPools/m2c-qa-private-pool'
-
-  allow_failure: true
