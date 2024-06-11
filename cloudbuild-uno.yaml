@@ -4,9 +4,6 @@ steps:
   args:
     - "-c"
     - |
-        echo "PROJECT_ID: $PROJECT_ID"
-        echo "SHORT_SHA: ${SHORTSHA}"
-        echo "SHORT_SHA: $SHORTSHA"
         docker build . -t us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments:latest -t us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments -f Dockerfile
   id: build
 # Push the container image to Container Registry
