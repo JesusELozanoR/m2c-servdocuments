@@ -3,10 +3,10 @@ steps:
   args: ['build', '.', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments:${SHORT_SHA}', '-t',
           'us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments','-f', 'Dockerfile' ]
   id: build
-# # Push the container image to Container Registry
-# - name: 'gcr.io/cloud-builders/docker'
-#   args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments:$SHORT_SHA']
-#   id: push
+# Push the container image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments:$SHORT_SHA']
+  id: push
 # #Deploy container image to Cloud Deploy
 # # Segundo paso: iniciar otro build
 # - name: 'gcr.io/cloud-builders/gcloud'
