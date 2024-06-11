@@ -8,8 +8,9 @@ steps:
       echo "SHORT_SHA: ${SHORT_SHA}"
       echo "SHORT_SHA: $SHORT_SHA"
       echo "------------------------------------------"
-      echo "Attempt $attempt_num failed! Trying again in 5 seconds..."
   id: ECHO
+  env:
+    - 'SHORT_SHA=${SHORT_SHA}'
 - name: gcr.io/cloud-builders/gcloud
   entrypoint: "bash"
   args:
