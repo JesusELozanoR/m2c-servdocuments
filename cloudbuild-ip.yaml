@@ -17,8 +17,6 @@ steps:
         fi
   id: curl_nuget_10_retry
 
-substitutions:
-  _SHORT_SHA: '$SHORT_SHA'
 options:
   pool:
     name: 'projects/came-devops-qa-421116/locations/us-central1/workerPools/m2c-qa-private-pool'
