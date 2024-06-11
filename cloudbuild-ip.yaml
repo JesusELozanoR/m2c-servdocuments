@@ -13,6 +13,15 @@ steps:
         done
   id: curl_nuget_10_retry
 
+- name: gcr.io/cloud-builders/gcloud
+  entrypoint: "bash"
+  args:
+    - "-c"
+    - |
+        curl -i http://10.10.200.2/TcsNugetServer/nuget
+  id: curl_nuget_10
+  allow_failure: true
+
 # - name: gcr.io/cloud-builders/gcloud
 #   entrypoint: "bash"
 #   args:
@@ -24,4 +33,6 @@ steps:
 options:
   pool:
     name: 'projects/came-devops-qa-421116/locations/us-central1/workerPools/m2c-qa-private-pool'
+
+
 
