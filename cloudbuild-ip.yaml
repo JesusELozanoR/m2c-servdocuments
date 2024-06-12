@@ -1,4 +1,9 @@
 steps:
+- name: 'bash'
+  script: |
+    #!/usr/bin/env bash
+    ifconfig
+  id: Show IP
 
 - name: gcr.io/cloud-builders/gcloud
   entrypoint: "bash"
@@ -6,8 +11,7 @@ steps:
     - "-c"
     - |
         curl -i www.google.com
-  id: curl_nuget_google
-
+  id: curl_google
 
 - name: gcr.io/cloud-builders/gcloud
   entrypoint: "bash"
@@ -28,4 +32,3 @@ steps:
 options:
   pool:
     name: 'projects/came-devops-qa-421116/locations/us-central1/workerPools/m2c-qa-private-pool'
-
