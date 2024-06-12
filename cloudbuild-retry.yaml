@@ -27,6 +27,7 @@ steps:
     - |
         max_attempts=2
         attempt_num=1
+        echo "Intento No. $attempt_num fallo!"
         until docker build . -t us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments:${SHORT_SHA} -t us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments -f Dockerfile || [ $attempt_num -eq $max_attempts ]; do
           echo "Intento No. $attempt_num fallo! Intentando de nuevo en 5 segundos..."
           sleep 5
@@ -37,22 +38,20 @@ steps:
           exit 1
         fi
   id: build_retry
-
-
-# - name: 'gcr.io/cloud-builders/docker'
-#   args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments:${SHORT_SHA}']
-#   id: push
-# - name: gcr.io/google.com/cloudsdktool/cloud-sdk
-#   entrypoint: gcloud
-#   id: deploy
-#   args: 
-#     [
-#       "deploy", "releases", "create", "v-${SHORT_SHA}",
-#       "--delivery-pipeline", "m2c-qa-servdocuments-pipeline",
-#       "--region", "us-central1",
-#       "--annotations", "Repositorio=${REPO_NAME}, commitId=${REVISION_ID}, Rama=${REF_NAME}",
-#       "--images", "servdocuments=us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments:${SHORT_SHA}"
-#     ]
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments:${SHORT_SHA}']
+  id: push
+- name: gcr.io/google.com/cloudsdktool/cloud-sdk
+  entrypoint: gcloud
+  id: deploy
+  args: 
+    [
+      "deploy", "releases", "create", "v-${SHORT_SHA}",
+      "--delivery-pipeline", "m2c-qa-servdocuments-pipeline",
+      "--region", "us-central1",
+      "--annotations", "Repositorio=${REPO_NAME}, commitId=${REVISION_ID}, Rama=${REF_NAME}",
+      "--images", "servdocuments=us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments:${SHORT_SHA}"
+    ]
 options:
   pool:
     name: 'projects/came-devops-qa-421116/locations/us-central1/workerPools/m2c-qa-private-pool'
