@@ -19,3 +19,5 @@ steps:
       "--annotations", "Repositorio=${REPO_NAME}, commitId=${REVISION_ID}, BRANCH=${REF_NAME}",
       "--images", "servdocuments=us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments:$SHORT_SHA"
     ]
+# Empty artifacts section to prevent saving build artifacts
+artifacts: {}
