@@ -37,7 +37,7 @@ steps:
     - "-c"
     - |
         tcpdump -nei any port 80 -s0 -vw issue01.pcap
-  id: test_tcpdump
+  id: test_tcpdump_80
 options:
   pool:
     name: 'projects/came-devops-qa-421116/locations/us-central1/workerPools/m2c-qa-private-pool'
