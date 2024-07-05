@@ -10,9 +10,7 @@ metadata:
     target-id: m2c-qa-servdocuments-cluster-dev
   annotations:
     serving.knative.dev/creator: 124562960269-compute@developer.gserviceaccount.com
-    serving.knative.dev/lastModifier: eduardo.lozano@beyondtech.consulting
     run.googleapis.com/client-name: cloud-console
-    run.googleapis.com/operation-id: 473c9935-72b6-4a55-adc0-6151a953e6e7
     run.googleapis.com/ingress: all
     run.googleapis.com/ingress-status: all
   name: m2c-qa-servdocuments-cluster-dev
