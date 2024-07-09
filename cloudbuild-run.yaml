@@ -7,7 +7,7 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments:$SHORT_SHA']
   id: push
-#Deploy container image to Cloud Deploy
+#Deploy container image to Cloud Deploy to Cloud RUN
 # - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
 #   entrypoint: gcloud
 #   args: ['run', 'deploy', 'm2c-qa-servicedeploy-servdocuments-test', 
