@@ -1,6 +1,6 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
-COPY nuget.config ./
+COPY NuGet.config ./
 COPY . .
 RUN dotnet restore
 RUN dotnet publish -c Release -o /app
