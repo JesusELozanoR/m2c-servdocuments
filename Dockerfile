@@ -1,13 +1,21 @@
+# Etapa de construcción
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
+
+# Copiar y configurar NuGet.Config
 COPY NuGet.Config ./
 RUN mkdir -p /root/.nuget/NuGet && cp ./NuGet.Config /root/.nuget/NuGet/NuGet.Config
 
-RUN nuget sources update -ValidAuthenticationTypes basic -Name "local_x0020_Tecas_x0020_v3" -Username "TKS\pharevalo" -ClearTextPassword "Wixi671_Wg%J"
+# Copiar el resto de los archivos del proyecto
 COPY . .
+
+# Restaurar dependencias
 RUN dotnet restore
+
+# Compilar y publicar el proyecto
 RUN dotnet publish -c Release -o /app
 
+# Etapa de runtime
 FROM mcr.microsoft.com/dotnet/aspnet:3.1-buster-slim
 WORKDIR /app
 COPY --from=build /app .

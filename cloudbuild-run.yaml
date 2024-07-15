@@ -6,6 +6,7 @@ steps:
     - |
         curl --ntlm -u 'TKS\pharevalo:Wixi671_Wg%J' http://192.168.101.28:8050/Desarrollo/_packaging/DESARROLLO_TEST/nuget/v3/index.json 
   id: curl_nuget_198
+  allowFailure: true
 
 - name: 'gcr.io/cloud-builders/docker'
   args: [
@@ -19,14 +20,12 @@ steps:
 
 # Push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
-  args: [
-    'push', 
-    'us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments:$SHORT_SHA'
-  ]
+  args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments:$SHORT_SHA']
   id: push
 
 images:
 - us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments
+
 options:
   pool:
     name: 'projects/came-devops-qa-421116/locations/us-central1/workerPools/m2c-qa-private-pool'
