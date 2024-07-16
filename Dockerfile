@@ -3,7 +3,7 @@ WORKDIR /src
 COPY NuGet.Config ./
 COPY ServDocumentos.API.sln ./
 COPY . .
-# RUN dotnet restore --configfile NuGet.Config
+RUN dotnet restore --configfile NuGet.Config
 RUN dotnet publish ServDocumentos.API/ServDocumentos.API.csproj -c Release -o /app
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
