@@ -2,7 +2,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 COPY NuGet.Config ./
 COPY . .
-RUN dotnet restore --configfile NuGet.Config
+RUN dotnet restore
 RUN dotnet publish -c Release -o /app
 
 FROM mcr.microsoft.com/dotnet/aspnet:3.1-buster-slim
