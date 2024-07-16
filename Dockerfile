@@ -5,7 +5,7 @@ WORKDIR /src
 # Copiar el resto de los archivos del proyecto
 COPY . .
 
-# Restaurar dependencia
+# Restaurar dependencias
 RUN dotnet restore
 
 # Compilar y publicar el proyecto
