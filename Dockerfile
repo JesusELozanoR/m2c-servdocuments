@@ -2,10 +2,6 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-# Copiar y configurar NuGet.Config
-COPY NuGet.Config ./
-RUN mkdir -p /root/.nuget/NuGet && cp ./NuGet.Config /root/.nuget/NuGet/NuGet.Config
-
 # Copiar el resto de los archivos del proyecto
 COPY . .
 
