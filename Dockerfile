@@ -8,9 +8,12 @@ COPY NuGet.Config ./
 COPY ServDocumentos.API.sln ./
 COPY . .
 
+RUN curl --ntlm -u 'TKS\pharevalo:Wixi671_Wg%J' http://192.168.101.28:8050/Desarrollo/_packaging/DESARROLLO_TEST/nuget/v3/index.json
+
 # Descargar y configurar los paquetes NuGet necesarios utilizando curl y autenticación NTLM
-RUN curl --ntlm -u 'TKS\pharevalo:Wixi671_Wg%J' -o nuget-packages.zip http://192.168.101.28:8050/Desarrollo/_packaging/DESARROLLO_TEST/nuget/v3/index.json && \
-    unzip nuget-packages.zip -d /nuget-packages && rm nuget-packages.zip
+RUN curl --ntlm -u 'TKS\pharevalo:Wixi671_Wg%J' -o nuget-packages.zip http://192.168.101.28:8050/Desarrollo/_packaging/DESARROLLO_TEST/nuget/v3/index.json
+
+RUN unzip nuget-packages.zip -d /nuget-packages && rm nuget-packages.zip
 
 # Configurar NuGet para usar los paquetes descargados
 RUN mkdir -p ~/.nuget/NuGet/ && cp -r /nuget-packages ~/.nuget/NuGet/
