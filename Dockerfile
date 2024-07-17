@@ -1,5 +1,8 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
+ENV NUGET_USERNAME=TKS\\pharevalo
+ENV NUGET_PASSWORD=Wixi671_Wg%J
+
 COPY NuGet.Config ./
 COPY ServDocumentos.API.sln ./
 COPY . .
