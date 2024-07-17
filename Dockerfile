@@ -2,7 +2,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 # Instalar herramientas necesarias
-RUN apt-get update && apt-get install -y curl unzip
+RUN apt-get update && apt-get install -y curl fastjar
 
 COPY NuGet.Config ./
 COPY ServDocumentos.API.sln ./
@@ -12,7 +12,7 @@ RUN curl --ntlm -u 'TKS\pharevalo:Wixi671_Wg%J' -o nuget-packages.zip http://192
 RUN ls
 
 # RUN unzip nuget-packages.zip -d /nuget-packages && rm nuget-packages.zip
-RUN unzip nuget-packages.zip
+RUN jar xvf nuget-packages.zip
 
 RUN ls
 # Configurar NuGet para usar los paquetes descargados
