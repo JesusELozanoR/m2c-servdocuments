@@ -7,11 +7,9 @@ RUN apt-get update && apt-get install -y curl unzip
 COPY NuGet.Config ./
 COPY ServDocumentos.API.sln ./
 COPY . .
-
-RUN curl --ntlm -u 'TKS\pharevalo:Wixi671_Wg%J' http://192.168.101.28:8050/Desarrollo/_packaging/DESARROLLO_TEST/nuget/v3/index.json
-RUN ls
 # Descargar y configurar los paquetes NuGet necesarios utilizando curl y autenticación NTLM
 RUN curl --ntlm -u 'TKS\pharevalo:Wixi671_Wg%J' -o nuget-packages.zip http://192.168.101.28:8050/Desarrollo/_packaging/DESARROLLO_TEST/nuget/v3/index.json
+RUN ls
 
 RUN unzip nuget-packages.zip -d /nuget-packages && rm nuget-packages.zip
 
