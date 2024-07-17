@@ -15,7 +15,7 @@ RUN cat /root/.nuget/NuGet/NuGet.Config
 
 RUN cat NuGet.Config
 # Restaurar y publicar el proyecto
-RUN dotnet restore --configfile NuGet.Config --verbosity detailed --ignore-failed-sources
+RUN dotnet restore  --verbosity detailed --ignore-failed-sources
 RUN dotnet publish --no-restore ServDocumentos.API/ServDocumentos.API.csproj -c Release -o /app
 
 # Stage 2: Create the runtime image
