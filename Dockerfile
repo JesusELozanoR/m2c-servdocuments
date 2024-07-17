@@ -1,3 +1,4 @@
+# Stage 1: Build the application
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
@@ -20,10 +21,14 @@ RUN unzip nuget-packages.zip -d /nuget-packages || echo "No se pudo descomprimir
 # Configurar NuGet para usar los paquetes descargados, si es aplicable
 RUN mkdir -p ~/.nuget/NuGet/ && cp -r /nuget-packages ~/.nuget/NuGet/ || echo "No se encontraron paquetes para copiar"
 
+# Agregar credenciales explícitas para el feed de NuGet
+RUN dotnet nuget add source --username 'pharevalo' --password 'Wixi671_Wg%J' --store-password-in-clear-text --name localTecasV3 http://192.168.101.28:8050/Desarrollo/_packaging/DESARROLLO_TEST/nuget/v3/index.json
+
 # Restaurar y publicar el proyecto
 RUN dotnet restore --configfile NuGet.Config --verbosity detailed --ignore-failed-sources
 RUN dotnet publish --no-restore ServDocumentos.API/ServDocumentos.API.csproj -c Release -o /app
 
+# Stage 2: Create the runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 COPY --from=build /app .
