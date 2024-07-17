@@ -22,7 +22,7 @@ RUN unzip nuget-packages.zip -d /nuget-packages || echo "No se pudo descomprimir
 RUN mkdir -p ~/.nuget/NuGet/ && cp -r /nuget-packages ~/.nuget/NuGet/ || echo "No se encontraron paquetes para copiar"
 RUN cat NuGet.Config
 # Agregar credenciales explícitas para el feed de NuGet
-RUN dotnet nuget add source NuGet.Config --username 'pharevalo' --password 'Wixi671_Wg%J' --store-password-in-clear-text --name 'local Tecas v3' http://192.168.101.28:8050/Desarrollo/_packaging/DESARROLLO_TEST/nuget/v3/index.json
+RUN dotnet nuget add source NuGet.Config --username 'pharevalo' --password 'Wixi671_Wg%J' --store-password-in-clear-text --name local_x0020_Tecas_x0020_v3 http://192.168.101.28:8050/Desarrollo/_packaging/DESARROLLO_TEST/nuget/v3/index.json
 RUN cat NuGet.Config
 # Restaurar y publicar el proyecto
 RUN dotnet restore --configfile NuGet.Config --verbosity detailed --ignore-failed-sources
