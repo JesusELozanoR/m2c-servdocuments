@@ -1,11 +1,12 @@
 FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
 WORKDIR /src
+RUN apt-get update && apt-get install -y curl unzip
+
 COPY NuGet.Config ./
 COPY ServDocumentos.API.sln ./
 COPY . .
 
 # Descargar paquetes NuGet necesarios utilizando curl y autenticación NTLM
-RUN apt-get update && apt-get install -y curl
 RUN curl --ntlm -u 'TKS\pharevalo:Wixi671_Wg%J' -o nuget-packages.zip http://192.168.101.28:8050/Desarrollo/_packaging/DESARROLLO_TEST/nuget/v3/index.json && \
     unzip nuget-packages.zip -d /nuget-packages && rm nuget-packages.zip
 
