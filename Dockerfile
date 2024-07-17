@@ -6,12 +6,8 @@ COPY NuGet.Config ./
 COPY ServDocumentos.API.sln ./
 COPY . .
 
-# Agregar credenciales explícitas para el feed de NuGet
-RUN dotnet nuget add source --name 'local Tecas v3' http://192.168.101.28:8050/Desarrollo/_packaging/DESARROLLO_TEST/nuget/v3/index.json --configfile NuGet.Config --username 'pharevalo' --password 'Wixi671_Wg%J' --store-password-in-clear-text --valid-authentication-types ntlm
-RUN dotnet nuget add source --name 'local Tecas' http://10.10.200.2/TcsNugetServer/nuget --configfile NuGet.Config
-
-RUN dotnet nuget list source
-
+# Verificar la configuración de NuGet
+RUN dotnet nuget list source --configfile NuGet.Config
 RUN cat NuGet.Config
 # Restaurar y publicar el proyecto
 RUN dotnet restore --configfile NuGet.Config --verbosity detailed --ignore-failed-sources
