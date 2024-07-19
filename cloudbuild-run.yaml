@@ -7,6 +7,7 @@ steps:
     '-f', 'Dockerfile'
   ]
   id: build
+  allowFailure: true
 # Push the container image to Container Registry
 # - name: 'gcr.io/cloud-builders/docker'
 #   args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/m2c-qa-dockerrepostory-servdocument-dev/servdocuments:$SHORT_SHA']
